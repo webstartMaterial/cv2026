@@ -166,22 +166,22 @@
     }
 
     .header__prompt {
-      font-size: 7px;
+      font-size: 8px;
       color: var(--text-3);
       letter-spacing: 0.12em;
       margin-bottom: 5px;
     }
     .header__name {
       font-weight: 700;
-      font-size: 22px;
+      font-size: 25px;
       color: var(--text-1);
       letter-spacing: 0.12em;
       line-height: 1;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
     .header__title {
       font-weight: 500;
-      font-size: 9px;
+      font-size: 10.5px;
       color: var(--cyan);
       letter-spacing: 0.22em;
     }
@@ -189,10 +189,10 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-top: 5px;
+      margin-top: 6px;
     }
     .header__pillar {
-      font-size: 7px;
+      font-size: 8px;
       color: var(--green);
       letter-spacing: 0.12em;
       opacity: 0.8;
@@ -201,8 +201,13 @@
       color: var(--cyan);
       opacity: 0.9;
     }
+    .header__pillar--site {
+      color: var(--text-2);
+      opacity: 0.6;
+      font-style: italic;
+    }
     .header__pillar-sep {
-      font-size: 7px;
+      font-size: 8px;
       color: var(--text-1);
       opacity: 0.3;
     }
@@ -210,16 +215,16 @@
     .header__contact {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       align-items: flex-end;
     }
     .header__contact-row {
       display: flex;
       align-items: center;
       gap: 7px;
-      font-size: 7px;
+      font-size: 8px;
     }
-    .c-label { color: var(--text-3); letter-spacing: 0.15em; font-size: 6.5px; }
+    .c-label { color: var(--text-3); letter-spacing: 0.15em; font-size: 7.5px; }
     .c-sep   { color: var(--cyan); opacity: 0.35; }
     .c-val   { color: var(--text-2); letter-spacing: 0.04em; }
     .c-val--visa {
@@ -257,11 +262,11 @@
       gap: 6px;
       margin-bottom: 8px;
     }
-    .s-label__slash { font-size: 7px; opacity: 0.4; }
+    .s-label__slash { font-size: 8px; opacity: 0.4; }
     .s-label__text  {
       font-weight: 500;
-      font-size: 6.5px;
-      color: var(--text-3);
+      font-size: 7.5px;
+      color: var(--text-4);
       letter-spacing: 0.22em;
       text-transform: uppercase;
     }
@@ -278,14 +283,14 @@
 
     /* ── Sidebar: STATUS ───────────────────────────────────── */
     .status-row { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; }
-    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
-    .status-txt { font-size: 8px; font-weight: 500; color: var(--green); letter-spacing: 0.15em; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .status-txt { font-size: 9px; font-weight: 500; color: var(--green); letter-spacing: 0.15em; }
 
     /* ── Tags ──────────────────────────────────────────────── */
     .tags { display: flex; flex-wrap: wrap; gap: 4px; }
     .tag  {
-      font-size: 6.5px;
-      padding: 2px 6px;
+      font-size: 7.5px;
+      padding: 2.5px 7px;
       border-radius: 1px;
       letter-spacing: 0.06em;
     }
@@ -302,13 +307,13 @@
       gap: 5px;
       padding: 2px 7px;
       background: rgba(255,255,255,0.015);
-      border: 1px solid rgba(255,255,255,0.05);
-      font-size: 6.5px;
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 7.5px;
       color: var(--text-2);
       letter-spacing: 0.03em;
       white-space: nowrap;
     }
-    .sb-build-arrow { font-size: 6px; color: var(--cyan); opacity: 0.55; flex-shrink: 0; }
+    .sb-build-arrow { font-size: 7px; color: var(--cyan); opacity: 0.55; flex-shrink: 0; }
 
     /* ── Sidebar: DIMENSIONS ───────────────────────────────── */
     .dim-row {
@@ -317,17 +322,34 @@
       align-items: center;
       padding: 3.5px 0;
     }
-    .dim-name  { font-size: 7px; color: var(--text-2); letter-spacing: 0.06em; }
-    .dim-badge { font-size: 5.5px; padding: 1.5px 5px; border-radius: 1px; letter-spacing: 0.1em; }
+    .dim-name  { font-size: 8px; color: var(--text-2); letter-spacing: 0.06em; }
+    .dim-badge { font-size: 6.5px; padding: 2px 6px; border-radius: 1px; letter-spacing: 0.1em; }
     .dim-badge--cyan   { color: var(--cyan);   background: rgba(0,212,255,0.1); }
+    .dim-badge--pink   { color: var(--pink);   background: rgba(255,92,138,0.08); }
     .dim-badge--blue   { color: var(--blue);   background: rgba(74,158,255,0.1); }
     .dim-badge--green  { color: var(--green);  background: rgba(0,255,148,0.1); }
     .dim-badge--yellow { color: var(--yellow); background: rgba(255,184,0,0.1); }
 
+    /* ── Sidebar: EDUCATION ────────────────────────────────── */
+    .edu-entry { margin-bottom: 2px; }
+    .edu-degree {
+      font-size: 8px;
+      font-weight: 500;
+      color: var(--text-1);
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .edu-school {
+      font-size: 8px;
+      color: var(--yellow);
+      letter-spacing: 0.06em;
+      opacity: 0.85;
+    }
+
     /* ── Sidebar: METRICS ──────────────────────────────────── */
     .metric-block { margin-bottom: 9px; }
-    .metric-val   { font-weight: 700; font-size: 13px; color: var(--text-1); line-height: 1; margin-bottom: 2px; }
-    .metric-lbl   { font-size: 6px; color: var(--text-3); letter-spacing: 0.18em; }
+    .metric-val   { font-weight: 700; font-size: 15px; color: var(--text-1); line-height: 1; margin-bottom: 2px; }
+    .metric-lbl   { font-size: 7px; color: var(--text-3); letter-spacing: 0.18em; }
 
     /* ── Main: SECTION HEADING ─────────────────────────────── */
     .sec-heading {
@@ -336,15 +358,15 @@
       gap: 8px;
       margin-bottom: 9px;
     }
-    .sec-num   { font-size: 6.5px; color: var(--text-3); letter-spacing: 0.15em; }
-    .sec-slash { font-size: 6.5px; opacity: 0.35; }
-    .sec-title { font-weight: 500; font-size: 7px; color: var(--text-3); letter-spacing: 0.22em; }
+    .sec-num   { font-size: 7.5px; color: var(--text-4); letter-spacing: 0.15em; font-weight: bold; }
+    .sec-slash { font-size: 7.5px; color: var(--text-4); font-weight: bold; }
+    .sec-title { font-weight: bold; font-size: 8px; color: var(--text-4); letter-spacing: 0.22em; }
     .sec-line  { flex: 1; height: 1px; background: var(--border); }
 
     /* ── Profile ───────────────────────────────────────────── */
     .profile-text {
       font-family: var(--sans);
-      font-size: 8.5px;
+      font-size: 9.5px;
       color: var(--text-2);
       line-height: 1.65;
       margin-bottom: 11px;
@@ -359,11 +381,11 @@
       padding: 5px 10px;
       background: rgba(255,255,255,0.015);
       border: 1px solid rgba(255,255,255,0.05);
-      font-size: 7px;
+      font-size: 8px;
       color: var(--text-2);
       letter-spacing: 0.04em;
     }
-    .build-arrow { font-size: 6.5px; color: var(--cyan); opacity: 0.55; }
+    .build-arrow { font-size: 7.5px; color: var(--cyan); opacity: 0.55; }
 
     /* ── Projects ──────────────────────────────────────────── */
     .projects-list { display: flex; flex-direction: column; margin-bottom: 11px; }
@@ -376,10 +398,10 @@
       border-bottom: 1px solid rgba(255,255,255,0.04);
     }
     .project-row:nth-child(odd) { background: rgba(255,255,255,0.015); }
-    .project-id    { font-size: 6px; color: var(--text-3); letter-spacing: 0.1em; }
-    .project-title { font-weight: 500; font-size: 7.5px; color: var(--text-1); letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .project-stack { font-size: 6px; color: var(--blue); opacity: 0.65; letter-spacing: 0.04em; white-space: nowrap; }
-    .project-year  { font-size: 6px; color: var(--text-3); text-align: right; letter-spacing: 0.06em; }
+    .project-id    { font-size: 7px; color: var(--text-3); letter-spacing: 0.1em; }
+    .project-title { font-weight: 500; font-size: 8.5px; color: var(--text-1); letter-spacing: 0.04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .project-stack { font-size: 7px; color: var(--blue); opacity: 0.65; letter-spacing: 0.04em; white-space: nowrap; }
+    .project-year  { font-size: 7px; color: var(--text-3); text-align: right; letter-spacing: 0.06em; }
 
     /* ── Teaching ──────────────────────────────────────────── */
     .teach-metrics { display: grid; grid-template-columns: repeat(3,1fr); margin-bottom: 8px; }
@@ -388,8 +410,8 @@
       background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.05);
     }
-    .teach-val { font-weight: 700; font-size: 13px; color: var(--green); line-height: 1; margin-bottom: 2px; }
-    .teach-lbl { font-size: 5.5px; color: var(--text-3); letter-spacing: 0.18em; }
+    .teach-val { font-weight: 700; font-size: 15px; color: var(--green); line-height: 1; margin-bottom: 2px; }
+    .teach-lbl { font-size: 6.5px; color: var(--text-4); letter-spacing: 0.18em; }
     .formats-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 11px; margin-top: 6px; }
 
     /* ── Content ───────────────────────────────────────────── */
@@ -436,17 +458,17 @@
     }
     .page2-header__name {
       font-weight: 700;
-      font-size: 11px;
+      font-size: 13px;
       color: var(--text-1);
       letter-spacing: 0.15em;
     }
     .page2-header__title {
-      font-size: 7.5px;
+      font-size: 8.5px;
       color: var(--cyan);
       letter-spacing: 0.18em;
     }
     .page2-header__pg {
-      font-size: 7px;
+      font-size: 8px;
       color: var(--text-3);
       letter-spacing: 0.1em;
     }
@@ -488,7 +510,7 @@
     .tl-entry:last-child { border-bottom: none; }
 
     .tl-year {
-      font-size: 8px;
+      font-size: 9px;
       font-weight: 500;
       color: var(--text-3);
       letter-spacing: 0.08em;
@@ -513,14 +535,14 @@
 
     .tl-info {}
     .tl-log {
-      font-size: 6px;
+      font-size: 7px;
       color: var(--text-5);
       letter-spacing: 0.2em;
       margin-bottom: 2px;
     }
     .tl-title {
       font-weight: 500;
-      font-size: 9px;
+      font-size: 10.5px;
       color: var(--text-1);
       letter-spacing: 0.04em;
       line-height: 1.2;
@@ -528,13 +550,13 @@
     }
     .tl-desc {
       font-family: var(--sans);
-      font-size: 7.5px;
+      font-size: 8.5px;
       color: var(--text-2);
       line-height: 1.5;
     }
 
     .tl-tag {
-      font-size: 6px;
+      font-size: 7px;
       padding: 2px 7px;
       border-radius: 1px;
       letter-spacing: 0.12em;
@@ -559,8 +581,8 @@
       margin-top: 5px;
     }
     .tl-client {
-      font-size: 5.5px;
-      padding: 1.5px 5px;
+      font-size: 6.5px;
+      padding: 2px 6px;
       border-radius: 1px;
       color: var(--text-4);
       border: 1px solid rgba(255,255,255,0.08);
@@ -615,6 +637,9 @@
           <span class="header__pillar-sep">·</span>
           <span class="header__pillar header__pillar--phone">+971 50 554 8034</span>
         </div>
+        <div class="header__pillars" style="margin-top:4px">
+          <span class="header__pillar header__pillar--site">www.samihhabbani.com</span>
+        </div>
       </div>
     </div>
     <div class="header__contact">
@@ -654,6 +679,31 @@
       <div class="status-row">
         <span class="status-dot"></span>
         <span class="status-txt">AVAILABLE</span>
+      </div>
+
+      <!--<div class="sb-sp"></div> -->
+      <div class="divider"></div>
+     <!-- <div class="sb-sp"></div> -->
+
+      <!-- <div class="s-label">
+        <span class="s-label__slash" style="color:var(--yellow)">//</span>
+        <span class="s-label__text">DIMENSIONS</span>
+      </div> -->
+      <div class="dim-row">
+        <span class="dim-name">FWDAI-ENG</span>
+        <span class="dim-badge dim-badge--pink">AUTOMATED</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">AI INSTRUCTOR</span>
+        <span class="dim-badge dim-badge--blue">ACTIVE</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">FULL STACK DEV</span>
+        <span class="dim-badge dim-badge--green">DEPLOYED</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">CONTENT CREATOR</span>
+        <span class="dim-badge dim-badge--yellow">RUNNING</span>
       </div>
 
       <div class="divider"></div>
@@ -714,31 +764,6 @@
       <div class="sb-sp"></div>
 
       <div class="s-label">
-        <span class="s-label__slash" style="color:var(--yellow)">//</span>
-        <span class="s-label__text">DIMENSIONS</span>
-      </div>
-      <div class="dim-row">
-        <span class="dim-name">FWDAI-ENG</span>
-        <span class="dim-badge dim-badge--cyan">AUTOMATED</span>
-      </div>
-      <div class="dim-row">
-        <span class="dim-name">FULL STACK DEV</span>
-        <span class="dim-badge dim-badge--blue">DEPLOYED</span>
-      </div>
-      <div class="dim-row">
-        <span class="dim-name">INSTRUCTOR</span>
-        <span class="dim-badge dim-badge--green">ACTIVE</span>
-      </div>
-      <div class="dim-row">
-        <span class="dim-name">CREATOR</span>
-        <span class="dim-badge dim-badge--yellow">RUNNING</span>
-      </div>
-
-      <div class="sb-sp"></div>
-      <div class="divider"></div>
-      <div class="sb-sp"></div>
-
-      <div class="s-label">
         <span class="s-label__slash" style="color:var(--green)">//</span>
         <span class="s-label__text">METRICS</span>
       </div>
@@ -755,18 +780,61 @@
         <div class="metric-lbl">PROJECTS DEPLOYED</div>
       </div>
 
+      <div class="sb-sp"></div>
+      <div class="divider"></div>
+      <div class="sb-sp"></div>
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--yellow)">//</span>
+        <span class="s-label__text">EDUCATION</span>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-degree">MBA International Management</div>
+        <div class="edu-school">Saint John's University — NY</div>
+      </div>
+
+      <div class="sb-sp"></div>
+
+      <div class="edu-entry">
+        <div class="edu-degree">Certificate · Web Development</div>
+        <div class="edu-school">Web Force 3 — Paris</div>
+      </div>
+
     </aside>
 
     <!-- MAIN -->
     <main class="main">
 
-      <!-- 01 · PROFILE -->
+            <!-- 01 · PROFILE -->
       <div class="sec-heading">
         <span class="sec-num">01</span>
-        <span class="sec-slash" style="color:var(--cyan)">//</span>
+        <span class="sec-slash">//</span>
         <span class="sec-title">PROFILE</span>
         <div class="sec-line"></div>
       </div>
+
+      <!-- <div class="sec-heading">
+        <span class="sec-num">04</span>
+        <span class="sec-slash" style="color:var(--green)">//</span>
+        <span class="sec-title">TEACHING & TRAINING</span>
+        <div class="sec-line"></div>
+      </div> -->
+      <div class="teach-metrics">
+        <div class="teach-metric">
+          <div class="teach-val">5,000+</div>
+          <div class="teach-lbl">LEARNERS TRAINED</div>
+        </div>
+        <div class="teach-metric">
+          <div class="teach-val">10 YRS</div>
+          <div class="teach-lbl">EXPERIENCE</div>
+        </div>
+        <div class="teach-metric">
+          <div class="teach-val">4+</div>
+          <div class="teach-lbl">FORMATS</div>
+        </div>
+      </div>
+
       <p class="profile-text">
         Forward Deployed AI Engineer designing and deploying AI agents, LLM pipelines and
         intelligent systems for businesses and startups. Full stack developer and digital
@@ -779,7 +847,7 @@
       <!-- 02 · EXPERIENCE -->
       <div class="sec-heading">
         <span class="sec-num">02</span>
-        <span class="sec-slash" style="color:var(--cyan)">//</span>
+        <span class="sec-slash">//</span>
         <span class="sec-title">EXPERIENCE TIMELINE</span>
         <div class="sec-line"></div>
       </div>
@@ -863,9 +931,9 @@
         </div>
 
         <div class="tl-entry">
-          <span class="tl-year" style="padding-right:1rem">2018+</span>
+          <span class="tl-year" style="padding-right:1rem">2019</span>
           <div class="tl-dot-col">
-            <span class="tl-dot" style="border-color:var(--grey)"></span>
+            <span class="tl-dot" style="border-color:var(--green)"></span>
           </div>
           <div class="tl-info">
             <div class="tl-log">PARIS</div>
@@ -877,7 +945,7 @@
               <span class="tl-client">Oracom Group</span>
             </div>
           </div>
-          <span class="tl-tag tl-tag--grey">IT CONSULTANT</span>
+          <span class="tl-tag tl-tag--green">IT CONSULTANT</span>
         </div>
 
         <div class="tl-entry">
@@ -886,7 +954,7 @@
             <span class="tl-dot" style="border-color:var(--green)"></span>
           </div>
           <div class="tl-info">
-            <div class="tl-log">BUILD</div>
+            <div class="tl-log">MALAGA, SPAIN</div>
             <div class="tl-title">Senior Java Developer — ACCENTURE</div>
             <div class="tl-desc">Structured back-end systems. Client projects. Production architectures.</div>
           </div>
@@ -899,7 +967,7 @@
             <span class="tl-dot" style="border-color:var(--green)"></span>
           </div>
           <div class="tl-info">
-            <div class="tl-log">FORK</div>
+            <div class="tl-log">BARCELONA, SPAIN</div>
             <div class="tl-title">Full Stack Developer — SOPRA STERIA</div>
             <div class="tl-desc">Angular, Java, Spring Batch. Enterprise projects for the French Government.</div>
           </div>
@@ -912,7 +980,7 @@
             <span class="tl-dot" style="border-color:var(--green)"></span>
           </div>
           <div class="tl-info">
-            <div class="tl-log">INIT</div>
+            <div class="tl-log">BARCELONA, SPAIN</div>
             <div class="tl-title">Front-End Developer — GLOVO</div>
             <div class="tl-desc">HTML, CSS, JavaScript, Angular. First commits. First production features.</div>
           </div>
@@ -926,7 +994,7 @@
       <!-- 03 · PROJECTS -->
       <div class="sec-heading">
         <span class="sec-num">03</span>
-        <span class="sec-slash" style="color:var(--blue)">//</span>
+        <span class="sec-slash">//</span>
         <span class="sec-title">SELECTED PROJECTS</span>
         <div class="sec-line"></div>
       </div>
