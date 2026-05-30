@@ -297,6 +297,7 @@
     .tag--cyan   { color: var(--cyan);   background: rgba(0,212,255,0.08);  border: 1px solid rgba(0,212,255,0.2); }
     .tag--blue   { color: var(--blue);   background: rgba(74,158,255,0.08); border: 1px solid rgba(74,158,255,0.2); }
     .tag--green  { color: var(--green);  background: rgba(0,255,148,0.07);  border: 1px solid rgba(0,255,148,0.18); }
+    .tag--pink  { color: var(--pink);  background: rgba(255,92,138,0.08);  border: 1px solid rgba(0,255,148,0.18); }
     .tag--yellow { color: var(--yellow); background: rgba(255,184,0,0.07);  border: 1px solid rgba(255,184,0,0.18); }
 
     /* ── Sidebar: BUILDS ──────────────────────────────────── */
@@ -404,7 +405,9 @@
     .project-year  { font-size: 7px; color: var(--text-3); text-align: right; letter-spacing: 0.06em; }
 
     /* ── Teaching ──────────────────────────────────────────── */
-    .teach-metrics { display: grid; grid-template-columns: repeat(3,1fr); margin-bottom: 8px; }
+    .teach-metrics { display: grid; grid-template-columns: repeat(4,1fr); margin-bottom: 8px; }
+    .teach-metric--hobby { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .teach-val--hobby { font-size: 13px; line-height: 1; }
     .teach-metric  {
       padding: 9px 12px;
       background: rgba(255,255,255,0.02);
@@ -634,8 +637,6 @@
           <span class="header__pillar">Full Stack Developer</span>
           <span class="header__pillar-sep">·</span>
           <span class="header__pillar">Coding &amp; AI Instructor</span>
-          <span class="header__pillar-sep">·</span>
-          <span class="header__pillar header__pillar--phone">+971 50 554 8034</span>
         </div>
         <div class="header__pillars" style="margin-top:4px">
           <span class="header__pillar header__pillar--site">www.samihhabbani.com</span>
@@ -643,10 +644,6 @@
       </div>
     </div>
     <div class="header__contact">
-      <div class="header__contact-row">
-        <span class="c-label">EMAIL</span><span class="c-sep">//</span>
-        <span class="c-val">samih.habbani@gmail.com</span>
-      </div>
       <div class="header__contact-row">
         <span class="c-label">LINKEDIN</span><span class="c-sep">//</span>
         <span class="c-val">linkedin.com/in/samih-habbani</span>
@@ -657,11 +654,19 @@
       </div>
       <div class="header__contact-row">
         <span class="c-label">LOCATION</span><span class="c-sep">//</span>
-        <span class="c-val">Dubai</span>
+        <span class="c-val c-val--visa">Dubai</span>
       </div>
       <div class="header__contact-row">
         <span class="c-label">STATUS</span><span class="c-sep">//</span>
         <span class="c-val c-val--visa">French · Investor Visa</span>
+      </div>
+      <div class="header__contact-row">
+        <span class="c-label">PHONE</span><span class="c-sep">//</span>
+        <span class="c-val" style="color:var(--cyan)">+971 50 554 8034</span>
+      </div>
+      <div class="header__contact-row">
+        <span class="c-label">EMAIL</span><span class="c-sep">//</span>
+        <span class="c-val" style="color:var(--cyan)">samih.habbani@gmail.com</span>
       </div>
     </div>
   </header>
@@ -714,13 +719,13 @@
         <span class="s-label__text">AI · LLM</span>
       </div>
       <div class="tags" style="margin-bottom:2px">
-        <span class="tag tag--cyan">Claude API</span>
-        <span class="tag tag--cyan">OpenAI</span>
-        <span class="tag tag--cyan">LangChain</span>
-        <span class="tag tag--cyan">RAG</span>
-        <span class="tag tag--cyan">n8n</span>
-        <span class="tag tag--cyan">Python</span>
-        <span class="tag tag--cyan">Prompt Eng.</span>
+        <span class="tag tag--pink">Claude API</span>
+        <span class="tag tag--pink">OpenAI</span>
+        <span class="tag tag--pink">LangChain</span>
+        <span class="tag tag--pink">RAG</span>
+        <span class="tag tag--pink">n8n</span>
+        <span class="tag tag--pink">Python</span>
+        <span class="tag tag--pink">Prompt Eng.</span>
       </div>
 
       <div class="sb-sp-lg"></div>
@@ -730,14 +735,14 @@
         <span class="s-label__text">WEB · FULL STACK</span>
       </div>
       <div class="tags" style="margin-bottom:2px">
-        <span class="tag tag--blue">React</span>
-        <span class="tag tag--blue">Next.js</span>
-        <span class="tag tag--blue">Symfony</span>
-        <span class="tag tag--blue">Node.js</span>
-        <span class="tag tag--blue">PHP</span>
-        <span class="tag tag--blue">PostgreSQL</span>
-        <span class="tag tag--blue">MySQL</span>
-        <span class="tag tag--blue">Tailwind</span>
+        <span class="tag tag--green">React</span>
+        <span class="tag tag--green">Next.js</span>
+        <span class="tag tag--green">Symfony</span>
+        <span class="tag tag--green">Node.js</span>
+        <span class="tag tag--green">PHP</span>
+        <span class="tag tag--green">PostgreSQL</span>
+        <span class="tag tag--green">MySQL</span>
+        <span class="tag tag--green">Tailwind</span>
       </div>
 
             <div class="sb-sp-lg"></div>
@@ -822,24 +827,35 @@
       </div> -->
       <div class="teach-metrics">
         <div class="teach-metric">
+          <div class="teach-val">10 YRS</div>
+          <div class="teach-lbl">EXPERIENCE IN CODING</div>
+        </div>
+        <div class="teach-metric">
+          <div class="teach-val">7 YRS</div>
+          <div class="teach-lbl">CURICULUM DESIGN</div>
+        </div>
+        <div class="teach-metric">
           <div class="teach-val">5,000+</div>
           <div class="teach-lbl">LEARNERS TRAINED</div>
         </div>
         <div class="teach-metric">
-          <div class="teach-val">10 YRS</div>
-          <div class="teach-lbl">EXPERIENCE</div>
-        </div>
-        <div class="teach-metric">
-          <div class="teach-val">4+</div>
-          <div class="teach-lbl">FORMATS</div>
+          <div class="teach-val">1,000+</div>
+          <div class="teach-lbl">TRAINING VIDEOS</div>
         </div>
       </div>
 
-      <p class="profile-text">
-        Forward Deployed AI Engineer designing and deploying AI agents, LLM pipelines and
+      <div class="teach-metrics" style="margin-top:-1px">
+        <div class="teach-metric teach-metric--hobby" style="grid-column: 1 / -1">
+          <div class="teach-val teach-val--hobby">🥋</div>
+          <div class="teach-lbl">BRAZILIAN JIU JITSU COMPETITOR</div>
+        </div>
+      </div>
+
+            <p class="profile-text">
+        Forward Deployed AI Engineer designing and deploying AI solutions and
         intelligent systems for businesses and startups. Full stack developer and digital
         educator with 10 years of experience and 5,000+ learners trained across France,
-        Spain, Morocco and Dubai.
+        Spain, Morocco and Dubai. Content creator and Curiculum designer to accelerate career transitions and knowledge transmission.
       </p>
 
       <!-- <div class="divider"></div> -->
@@ -861,8 +877,8 @@
           </div>
           <div class="tl-info">
             <div class="tl-log">DUBAI</div>
-            <div class="tl-title">Forward Deployed AI Engineer & Teacher</div>
-            <div class="tl-desc">AI + code + education + content. Everything converges.</div>
+            <div class="tl-title">Forward Deployed AI Engineer & Instructor</div>
+            <div class="tl-desc">AI + code + training + content. Everything converges.</div>
             <div class="tl-clients">
               <span class="tl-client">Morgan International</span>
               <span class="tl-client">Octus Mindz Training</span>
@@ -880,7 +896,7 @@
           </div>
           <div class="tl-info">
             <div class="tl-log">PARIS</div>
-            <div class="tl-title">Founder & Tech Instructor - Académie WS</div>
+            <div class="tl-title">Founder & Curriculum Designer - Académie WS</div>
             <div class="tl-desc">E-learning platform. Educational videos. Tech storytelling at scale.</div>
           </div>
           <span class="tl-tag tl-tag--blue">E-LEARNING PLATFORM</span>
@@ -893,7 +909,7 @@
           </div>
           <div class="tl-info">
             <div class="tl-log">PARIS</div>
-            <div class="tl-title">Founder & Tech Instructor - Web Start</div>
+            <div class="tl-title">Founder & Digital Education Specialist - Web Start</div>
             <div class="tl-desc">Delivering Job-ready programs for students, job seekers and professionals.</div>
             <div class="tl-clients">
               <span class="tl-client">AFPA</span>
@@ -920,7 +936,7 @@
           </div>
           <div class="tl-info">
             <div class="tl-log">PARIS</div>
-            <div class="tl-title">Freelance Digital Instructor</div>
+            <div class="tl-title">Freelance Coding Instructor</div>
             <div class="tl-desc">First classrooms. From code editor to whiteboard. Knowledge transmission.</div>
             <div class="tl-clients">
               <span class="tl-client">Evogue</span>
@@ -956,7 +972,7 @@
           <div class="tl-info">
             <div class="tl-log">MALAGA, SPAIN</div>
             <div class="tl-title">Senior Java Developer — ACCENTURE</div>
-            <div class="tl-desc">Structured back-end systems. Client projects. Production architectures.</div>
+            <div class="tl-desc">Java Spring. Structured back-end systems. Client projects. Production architectures.</div>
           </div>
           <span class="tl-tag tl-tag--green">SENIOR DEV</span>
         </div>
@@ -1041,12 +1057,12 @@
           <span class="project-stack">WordPress · PHP · WPML · MySQL</span>
           <span class="project-year">2022</span>
         </div>
-        <div class="project-row">
+        <!--<div class="project-row">
           <span class="project-id">008</span>
           <span class="project-title">Internal CRM &amp; Operations Platform</span>
           <span class="project-stack">Next.js · TypeScript · Tailwind · MySQL</span>
           <span class="project-year">2021</span>
-        </div>
+        </div>-->
       </div>
 
       <!-- Footer -->
