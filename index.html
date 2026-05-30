@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samih Habbani — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #040404;
+      --bg-sidebar:#080808;
+      --bg-header: #060606;
+      --cyan:      #00D4FF;
+      --green:     #00FF94;
+      --blue:      #4A9EFF;
+      --yellow:    #FFB800;
+      --pink:      #FF5C8A;
+      --grey:      #B8B8AE;
+      --text-1:    #E8E8E0;
+      --text-2:    #C8C8C0;
+      --text-3:    #3F3F3A;
+      --text-4:    #ffffffae;
+      --text-5:    #ffffff7b;
+      --border:    rgba(255,255,255,0.06);
+      --mono:      'IBM Plex Mono', monospace;
+      --sans:      'IBM Plex Sans', sans-serif;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      width: 210mm;
+      background: var(--bg);
+      color: var(--text-2);
+      font-family: var(--mono);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Page wrapper ──────────────────────────────────────── */
+    .cv {
+      width: 210mm;
+      background: var(--bg);
+    }
+
+    /* ── HEADER ────────────────────────────────────────────── */
+    .header {
+      background: var(--bg-header);
+      border-bottom: 1px solid rgba(0,212,255,0.2);
+      padding: 18px 36px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header__prompt {
+      font-size: 7px;
+      color: var(--text-3);
+      letter-spacing: 0.12em;
+      margin-bottom: 5px;
+    }
+    .header__name {
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-1);
+      letter-spacing: 0.12em;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .header__title {
+      font-weight: 500;
+      font-size: 9px;
+      color: var(--cyan);
+      letter-spacing: 0.22em;
+    }
+    .header__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-end;
+    }
+    .header__contact-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 7px;
+    }
+    .c-label { color: var(--text-3); letter-spacing: 0.15em; font-size: 6.5px; }
+    .c-sep   { color: var(--cyan); opacity: 0.35; }
+    .c-val   { color: var(--text-2); letter-spacing: 0.04em; }
+
+    /* ── BODY (2-col) ──────────────────────────────────────── */
+    .body {
+      display: grid;
+      grid-template-columns: 52mm 1fr;
+    }
+
+    /* ── SIDEBAR ───────────────────────────────────────────── */
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 22px 18px 28px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── MAIN ──────────────────────────────────────────────── */
+    .main {
+      padding: 22px 30px 28px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Shared components ─────────────────────────────────── */
+    .s-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .s-label__slash { font-size: 7px; opacity: 0.4; }
+    .s-label__text  {
+      font-weight: 500;
+      font-size: 6.5px;
+      color: var(--text-3);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--border);
+      margin: 11px 0;
+    }
+
+    .sb-sp    { height: 10px; }
+    .sb-sp-lg { height: 14px; }
+
+    /* ── Sidebar: STATUS ───────────────────────────────────── */
+    .status-row { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    .status-txt { font-size: 8px; font-weight: 500; color: var(--green); letter-spacing: 0.15em; }
+
+    /* ── Tags ──────────────────────────────────────────────── */
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag  {
+      font-size: 6.5px;
+      padding: 2px 6px;
+      border-radius: 1px;
+      letter-spacing: 0.06em;
+    }
+    .tag--cyan   { color: var(--cyan);   background: rgba(0,212,255,0.08);  border: 1px solid rgba(0,212,255,0.2); }
+    .tag--blue   { color: var(--blue);   background: rgba(74,158,255,0.08); border: 1px solid rgba(74,158,255,0.2); }
+    .tag--green  { color: var(--green);  background: rgba(0,255,148,0.07);  border: 1px solid rgba(0,255,148,0.18); }
+    .tag--yellow { color: var(--yellow); background: rgba(255,184,0,0.07);  border: 1px solid rgba(255,184,0,0.18); }
+
+    /* ── Sidebar: DIMENSIONS ───────────────────────────────── */
+    .dim-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3.5px 0;
+    }
+    .dim-name  { font-size: 7px; color: var(--text-2); letter-spacing: 0.06em; }
+    .dim-badge { font-size: 5.5px; padding: 1.5px 5px; border-radius: 1px; letter-spacing: 0.1em; }
+    .dim-badge--cyan   { color: var(--cyan);   background: rgba(0,212,255,0.1); }
+    .dim-badge--blue   { color: var(--blue);   background: rgba(74,158,255,0.1); }
+    .dim-badge--green  { color: var(--green);  background: rgba(0,255,148,0.1); }
+    .dim-badge--yellow { color: var(--yellow); background: rgba(255,184,0,0.1); }
+
+    /* ── Sidebar: METRICS ──────────────────────────────────── */
+    .metric-block { margin-bottom: 9px; }
+    .metric-val   { font-weight: 700; font-size: 13px; color: var(--text-1); line-height: 1; margin-bottom: 2px; }
+    .metric-lbl   { font-size: 6px; color: var(--text-3); letter-spacing: 0.18em; }
+
+    /* ── Main: SECTION HEADING ─────────────────────────────── */
+    .sec-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+    .sec-num   { font-size: 6.5px; color: var(--text-3); letter-spacing: 0.15em; }
+    .sec-slash { font-size: 6.5px; opacity: 0.35; }
+    .sec-title { font-weight: 500; font-size: 7px; color: var(--text-3); letter-spacing: 0.22em; }
+    .sec-line  { flex: 1; height: 1px; background: var(--border); }
+
+    /* ── Profile ───────────────────────────────────────────── */
+    .profile-text {
+      font-family: var(--sans);
+      font-size: 8.5px;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 11px;
+    }
+
+    /* ── Builds ────────────────────────────────────────────── */
+    .builds-grid { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 11px; }
+    .build-item  {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      background: rgba(255,255,255,0.015);
+      border: 1px solid rgba(255,255,255,0.05);
+      font-size: 7px;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+    }
+    .build-arrow { font-size: 6.5px; color: var(--cyan); opacity: 0.55; }
+
+    /* ── Projects ──────────────────────────────────────────── */
+    .projects-list { display: flex; flex-direction: column; margin-bottom: 11px; }
+    .project-row {
+      display: grid;
+      grid-template-columns: 22px 1fr 26px;
+      gap: 10px;
+      align-items: center;
+      padding: 6px 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .project-row:nth-child(odd) { background: rgba(255,255,255,0.015); }
+    .project-id    { font-size: 6.5px; color: var(--text-3); letter-spacing: 0.1em; }
+    .project-title { font-weight: 500; font-size: 7.5px; color: var(--text-1); letter-spacing: 0.06em; margin-bottom: 1px; }
+    .project-desc  { font-family: var(--sans); font-size: 7px; color: var(--text-2); margin-bottom: 1px; }
+    .project-stack { font-size: 6.5px; color: var(--blue); opacity: 0.7; letter-spacing: 0.05em; }
+    .project-year  { font-size: 6.5px; color: var(--text-3); text-align: right; letter-spacing: 0.06em; }
+
+    /* ── Teaching ──────────────────────────────────────────── */
+    .teach-metrics { display: grid; grid-template-columns: repeat(3,1fr); margin-bottom: 8px; }
+    .teach-metric  {
+      padding: 9px 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .teach-val { font-weight: 700; font-size: 13px; color: var(--green); line-height: 1; margin-bottom: 2px; }
+    .teach-lbl { font-size: 5.5px; color: var(--text-3); letter-spacing: 0.18em; }
+    .formats-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 11px; margin-top: 6px; }
+
+    /* ── Content ───────────────────────────────────────────── */
+    .content-text {
+      font-family: var(--sans);
+      font-size: 8px;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 11px;
+    }
+
+    /* ── FOOTER (end of page 1) ────────────────────────────── */
+    .footer-p1 {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-txt       { font-size: 6.5px; color: var(--text-3); letter-spacing: 0.1em; }
+    .footer-txt--cyan { color: var(--cyan); opacity: 0.5; }
+
+    /* ═══════════════════════════════════════════════════════ */
+    /* ── PAGE 2 — EXPERIENCE TIMELINE ──────────────────────── */
+    /* ═══════════════════════════════════════════════════════ */
+    .page2 {
+      page-break-before: always;
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Page 2 mini-header */
+    .page2-header {
+      background: var(--bg-header);
+      border-bottom: 1px solid rgba(0,212,255,0.12);
+      padding: 10px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page2-header__name {
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--text-1);
+      letter-spacing: 0.15em;
+    }
+    .page2-header__title {
+      font-size: 7.5px;
+      color: var(--cyan);
+      letter-spacing: 0.18em;
+    }
+    .page2-header__pg {
+      font-size: 7px;
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+    }
+
+    /* Page 2 body */
+    .page2-body {
+      padding: 28px 40px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Timeline entries ──────────────────────────────────── */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+    }
+
+    /* Vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 46px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .tl-entry {
+      display: grid;
+      grid-template-columns: 46px 16px 1fr auto;
+      gap: 0 12px;
+      align-items: start;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .tl-entry:last-child { border-bottom: none; }
+
+    .tl-year {
+      font-size: 8px;
+      font-weight: 500;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      padding-top: 2px;
+      text-align: right;
+    }
+
+    .tl-dot-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+    .tl-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid;
+      flex-shrink: 0;
+    }
+
+    .tl-info {}
+    .tl-log {
+      font-size: 6px;
+      color: var(--text-5);
+      letter-spacing: 0.2em;
+      margin-bottom: 2px;
+    }
+    .tl-title {
+      font-weight: 500;
+      font-size: 9px;
+      color: var(--text-1);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .tl-desc {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .tl-tag {
+      font-size: 6px;
+      padding: 2px 7px;
+      border-radius: 1px;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      align-self: start;
+      margin-top: 2px;
+    }
+
+    /* Tag colors */
+    .tl-tag--green  { color: var(--green);  background: rgba(0,255,148,0.08);  border: 1px solid rgba(0,255,148,0.2); }
+    .tl-tag--grey   { color: var(--grey);   background: rgba(184,184,174,0.08); border: 1px solid rgba(184,184,174,0.2); }
+    .tl-tag--blue   { color: var(--blue);   background: rgba(74,158,255,0.08); border: 1px solid rgba(74,158,255,0.2); }
+    .tl-tag--cyan   { color: var(--cyan);   background: rgba(0,212,255,0.08);  border: 1px solid rgba(0,212,255,0.2); }
+    .tl-tag--yellow { color: var(--yellow); background: rgba(255,184,0,0.08);  border: 1px solid rgba(255,184,0,0.2); }
+    .tl-tag--pink   { color: var(--pink);   background: rgba(255,92,138,0.08); border: 1px solid rgba(255,92,138,0.2); }
+
+    /* ── Client badges ─────────────────────────────────────── */
+    .tl-clients {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-top: 5px;
+    }
+    .tl-client {
+      font-size: 5.5px;
+      padding: 1.5px 5px;
+      border-radius: 1px;
+      color: var(--text-4);
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    /* Page 2 footer */
+    .footer-p2 {
+      margin-top: auto;
+      padding: 12px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media print {
+      html, body { width: 210mm; }
+      .page2 { page-break-before: always; }
+    }
+  </style>
+</head>
+<body>
+<div class="cv">
+
+  <!-- ══ PAGE 1 ═══════════════════════════════════════════════ -->
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <div class="header__prompt">&gt; samih@portfolio:~$ ./load --cv --profile fwdai-eng</div>
+      <div class="header__name">SAMIH HABBANI</div>
+      <div class="header__title">FORWARD DEPLOYED AI ENGINEER</div>
+    </div>
+    <div class="header__contact">
+      <div class="header__contact-row">
+        <span class="c-label">EMAIL</span><span class="c-sep">//</span>
+        <span class="c-val">samih.habbani@gmail.com</span>
+      </div>
+      <div class="header__contact-row">
+        <span class="c-label">LINKEDIN</span><span class="c-sep">//</span>
+        <span class="c-val">linkedin.com/in/samih-habbani</span>
+      </div>
+      <div class="header__contact-row">
+        <span class="c-label">GITHUB</span><span class="c-sep">//</span>
+        <span class="c-val">github.com/samihhabbani</span>
+      </div>
+      <div class="header__contact-row">
+        <span class="c-label">LOCATION</span><span class="c-sep">//</span>
+        <span class="c-val">Dubai / Remote</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--green)">//</span>
+        <span class="s-label__text">STATUS</span>
+      </div>
+      <div class="status-row">
+        <span class="status-dot"></span>
+        <span class="status-txt">AVAILABLE</span>
+      </div>
+
+      <div class="divider"></div>
+      <div class="sb-sp"></div>
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--cyan)">//</span>
+        <span class="s-label__text">AI · LLM</span>
+      </div>
+      <div class="tags" style="margin-bottom:2px">
+        <span class="tag tag--cyan">Claude API</span>
+        <span class="tag tag--cyan">OpenAI</span>
+        <span class="tag tag--cyan">LangChain</span>
+        <span class="tag tag--cyan">RAG</span>
+        <span class="tag tag--cyan">n8n</span>
+        <span class="tag tag--cyan">Python</span>
+        <span class="tag tag--cyan">Prompt Eng.</span>
+      </div>
+
+      <div class="sb-sp-lg"></div>
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--blue)">//</span>
+        <span class="s-label__text">WEB · FULL STACK</span>
+      </div>
+      <div class="tags" style="margin-bottom:2px">
+        <span class="tag tag--blue">React</span>
+        <span class="tag tag--blue">Next.js</span>
+        <span class="tag tag--blue">Symfony</span>
+        <span class="tag tag--blue">Node.js</span>
+        <span class="tag tag--blue">PHP</span>
+        <span class="tag tag--blue">PostgreSQL</span>
+        <span class="tag tag--blue">MySQL</span>
+        <span class="tag tag--blue">Tailwind</span>
+      </div>
+
+      <div class="sb-sp"></div>
+      <div class="divider"></div>
+      <div class="sb-sp"></div>
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--yellow)">//</span>
+        <span class="s-label__text">DIMENSIONS</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">FWDAI-ENG</span>
+        <span class="dim-badge dim-badge--cyan">AUTOMATED</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">FULL STACK DEV</span>
+        <span class="dim-badge dim-badge--blue">DEPLOYED</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">INSTRUCTOR</span>
+        <span class="dim-badge dim-badge--green">ACTIVE</span>
+      </div>
+      <div class="dim-row">
+        <span class="dim-name">CREATOR</span>
+        <span class="dim-badge dim-badge--yellow">RUNNING</span>
+      </div>
+
+      <div class="sb-sp"></div>
+      <div class="divider"></div>
+      <div class="sb-sp"></div>
+
+      <div class="s-label">
+        <span class="s-label__slash" style="color:var(--green)">//</span>
+        <span class="s-label__text">METRICS</span>
+      </div>
+      <div class="metric-block">
+        <div class="metric-val">5,000+</div>
+        <div class="metric-lbl">LEARNERS TRAINED</div>
+      </div>
+      <div class="metric-block">
+        <div class="metric-val">10 YRS</div>
+        <div class="metric-lbl">TEACHING XP</div>
+      </div>
+      <div class="metric-block">
+        <div class="metric-val">8+</div>
+        <div class="metric-lbl">PROJECTS DEPLOYED</div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- 01 · PROFILE -->
+      <div class="sec-heading">
+        <span class="sec-num">01</span>
+        <span class="sec-slash" style="color:var(--cyan)">//</span>
+        <span class="sec-title">PROFILE</span>
+        <div class="sec-line"></div>
+      </div>
+      <p class="profile-text">
+        Forward Deployed AI Engineer designing and deploying AI agents, LLM pipelines and
+        intelligent systems for businesses and startups. Full stack developer and digital
+        educator with 10 years of experience and 5,000+ learners trained across France,
+        Spain, Morocco and Dubai.
+      </p>
+
+      <div class="divider"></div>
+
+      <!-- 02 · BUILDS -->
+      <div class="sec-heading">
+        <span class="sec-num">02</span>
+        <span class="sec-slash" style="color:var(--cyan)">//</span>
+        <span class="sec-title">BUILDS</span>
+        <div class="sec-line"></div>
+      </div>
+      <div class="builds-grid">
+        <div class="build-item"><span class="build-arrow">→</span> Autonomous AI agents</div>
+        <div class="build-item"><span class="build-arrow">→</span> Business chatbots</div>
+        <div class="build-item"><span class="build-arrow">→</span> RAG pipelines</div>
+        <div class="build-item"><span class="build-arrow">→</span> LLM integrations</div>
+        <div class="build-item"><span class="build-arrow">→</span> AI training tools</div>
+        <div class="build-item"><span class="build-arrow">→</span> SaaS platforms</div>
+        <div class="build-item"><span class="build-arrow">→</span> LMS platforms</div>
+        <div class="build-item"><span class="build-arrow">→</span> Custom dashboards</div>
+        <div class="build-item"><span class="build-arrow">→</span> REST APIs</div>
+        <div class="build-item"><span class="build-arrow">→</span> Corporate websites</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- 03 · PROJECTS -->
+      <div class="sec-heading">
+        <span class="sec-num">03</span>
+        <span class="sec-slash" style="color:var(--blue)">//</span>
+        <span class="sec-title">SELECTED PROJECTS</span>
+        <div class="sec-line"></div>
+      </div>
+      <div class="projects-list">
+        <div class="project-row">
+          <span class="project-id">001</span>
+          <div class="project-info">
+            <div class="project-title">Syrama Services — Luxury Concierge</div>
+            <div class="project-desc">Premium concierge platform — travel, security, events and real estate</div>
+            <div class="project-stack">Symfony · MySQL · Tailwind · Webpack Encore</div>
+          </div>
+          <span class="project-year">2026</span>
+        </div>
+        <div class="project-row">
+          <span class="project-id">002</span>
+          <div class="project-info">
+            <div class="project-title">Académie WS — LMS Platform</div>
+            <div class="project-desc">Custom LMS with adaptive pathways, progress tracking and instructor tools</div>
+            <div class="project-stack">Symfony · MySQL · Tailwind · Webpack Encore</div>
+          </div>
+          <span class="project-year">2024</span>
+        </div>
+        <div class="project-row">
+          <span class="project-id">003</span>
+          <div class="project-info">
+            <div class="project-title">Itecom Art Design — School Management</div>
+            <div class="project-desc">School platform — schedules, attendance, delays, transfers, administration</div>
+            <div class="project-stack">Laravel · PostgreSQL · VueJS</div>
+          </div>
+          <span class="project-year">2025</span>
+        </div>
+        <div class="project-row">
+          <span class="project-id">004</span>
+          <div class="project-info">
+            <div class="project-title">VSP Security</div>
+            <div class="project-desc">Corporate site for private security services — fire safety, events, France</div>
+            <div class="project-stack">PHP · OOP · Tailwind</div>
+          </div>
+          <span class="project-year">2025</span>
+        </div>
+        <div class="project-row">
+          <span class="project-id">005</span>
+          <div class="project-info">
+            <div class="project-title">Exissia — IT Solutions</div>
+            <div class="project-desc">IT consulting firm — agile squads and digital transformation</div>
+            <div class="project-stack">HTML · CSS · PHP · OOP</div>
+          </div>
+          <span class="project-year">2024</span>
+        </div>
+        <div class="project-row">
+          <span class="project-id">006</span>
+          <div class="project-info">
+            <div class="project-title">Instant Chic — Photobooth Rental</div>
+            <div class="project-desc">Marketing site for photobooth and photo animation rental for events</div>
+            <div class="project-stack">React · Next.js · Framer Motion</div>
+          </div>
+          <span class="project-year">2024</span>
+        </div>
+      </div>
+
+      <!-- <div class="divider"></div> -->
+
+      <!-- 04 · TEACHING -->
+<!--       <div class="sec-heading">
+        <span class="sec-num">04</span>
+        <span class="sec-slash" style="color:var(--green)">//</span>
+        <span class="sec-title">TEACHING & TRAINING</span>
+        <div class="sec-line"></div>
+      </div>
+      <div class="teach-metrics">
+        <div class="teach-metric">
+          <div class="teach-val">5,000+</div>
+          <div class="teach-lbl">LEARNERS TRAINED</div>
+        </div>
+        <div class="teach-metric">
+          <div class="teach-val">10 YRS</div>
+          <div class="teach-lbl">EXPERIENCE</div>
+        </div>
+        <div class="teach-metric">
+          <div class="teach-val">4+</div>
+          <div class="teach-lbl">FORMATS</div>
+        </div>
+      </div>
+      <div class="formats-row">
+        <span class="tag tag--green">Bootcamps</span>
+        <span class="tag tag--green">AI Workshops</span>
+        <span class="tag tag--green">Corporate Training</span>
+        <span class="tag tag--green">Custom Programs</span>
+        <span class="tag tag--green">Web Dev</span>
+        <span class="tag tag--green">Digital Literacy</span>
+      </div> -->
+
+      <div class="divider"></div>
+
+      <!-- 05 · CONTENT CREATION -->
+      <div class="sec-heading">
+        <span class="sec-num">05</span>
+        <span class="sec-slash" style="color:var(--yellow)">//</span>
+        <span class="sec-title">CONTENT CREATION</span>
+        <div class="sec-line"></div>
+      </div>
+      <p class="content-text">
+        Transforming complex technical concepts into clear, structured and impactful content.
+        Educational videos · Online courses · Tech storytelling · AI popularization.
+      </p>
+
+      <!-- Footer page 1 -->
+      <div class="footer-p1">
+        <span class="footer-txt">&gt; samih.habbani@gmail.com</span>
+        <span class="footer-txt">SAMIH HABBANI · CV · 2026</span>
+        <span class="footer-txt footer-txt--cyan">PAGE 1 / 2</span>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ══ PAGE 2 ═══════════════════════════════════════════════ -->
+  <div class="page2">
+
+    <!-- Mini header -->
+    <div class="page2-header">
+      <div>
+        <div class="page2-header__name">SAMIH HABBANI</div>
+        <div class="page2-header__title">FORWARD DEPLOYED AI ENGINEER</div>
+      </div>
+      <span class="page2-header__pg">PAGE 2 / 2</span>
+    </div>
+
+    <!-- Timeline body -->
+    <div class="page2-body">
+
+      <div class="sec-heading" style="margin-bottom:20px">
+        <span class="sec-num">06</span>
+        <span class="sec-slash" style="color:var(--cyan)">//</span>
+        <span class="sec-title">EXPERIENCE TIMELINE</span>
+        <div class="sec-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2026</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--pink); background:rgba(255,92,138,0.15)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">DUBAI</div>
+            <div class="tl-title">Forward Deployed AI Engineer & Teacher</div>
+            <div class="tl-desc">AI + code + education + content. Everything converges.</div>
+            <div class="tl-clients">
+              <span class="tl-client">Morgan International</span>
+              <span class="tl-client">Octus Mindz Training</span>
+              <span class="tl-client">The Kid Space</span>
+              <span class="tl-client">Wood Wizards</span>
+            </div>
+          </div>
+          <span class="tl-tag tl-tag--pink">FWDAI</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2022</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--blue)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">PARIS</div>
+            <div class="tl-title">Founder & Tech Instructor - Académie WS</div>
+            <div class="tl-desc">E-learning platform. Educational videos. Tech storytelling at scale.</div>
+          </div>
+          <span class="tl-tag tl-tag--blue">E-LEARNING</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2020</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--blue)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">PARIS</div>
+            <div class="tl-title">Founder & Tech Instructor - Web Start</div>
+            <div class="tl-desc">Delivering Job-ready programs for students, job seekers and professionals.</div>
+            <div class="tl-clients">
+              <span class="tl-client">AFPA</span>
+              <span class="tl-client">Web Force 3</span>
+              <span class="tl-client">Ifocop</span>
+              <span class="tl-client">Institut G4</span>
+              <span class="tl-client">La PMN</span>
+              <span class="tl-client">Next Formation</span>
+              <span class="tl-client">La Fonderie</span>
+              <span class="tl-client">DORANCO</span>
+              <span class="tl-client">M2I Formation</span>
+              <span class="tl-client">Digital College</span>
+              <span class="tl-client">IIM Devinci</span>
+              <span class="tl-client">My Digital School</span>
+            </div>
+          </div>
+          <span class="tl-tag tl-tag--blue">TRAINING CENTER</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2019</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--blue)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">PARIS</div>
+            <div class="tl-title">Freelance Digital Instructor</div>
+            <div class="tl-desc">First classrooms. From code editor to whiteboard. Knowledge transmission.</div>
+            <div class="tl-clients">
+              <span class="tl-client">Evogue</span>
+              <span class="tl-client">2AI CONCEPT</span>
+            </div>
+          </div>
+          <span class="tl-tag tl-tag--blue">EDUCATION SPECIALIST</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2018+</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--grey)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">PARIS</div>
+            <div class="tl-title">Freelance Full Stack Developer & IT Consultant</div>
+            <div class="tl-desc">Websites, platforms, custom software. Client portfolio deployed.</div>
+            <div class="tl-clients">
+              <span class="tl-client">Clairfy</span>
+              <span class="tl-client">Exissia</span>
+              <span class="tl-client">Oracom Group</span>
+            </div>
+          </div>
+          <span class="tl-tag tl-tag--grey">IT CONSULTANT</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2018</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--green)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">BUILD</div>
+            <div class="tl-title">Senior Java Developer — ACCENTURE</div>
+            <div class="tl-desc">Structured back-end systems. Client projects. Production architectures.</div>
+          </div>
+          <span class="tl-tag tl-tag--green">SENIOR DEV</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2016</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--green)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">FORK</div>
+            <div class="tl-title">Full Stack Developer — SOPRA STERIA</div>
+            <div class="tl-desc">Angular, Java, Spring Batch. Enterprise projects for the French Government.</div>
+          </div>
+          <span class="tl-tag tl-tag--green">FULL STACK</span>
+        </div>
+
+        <div class="tl-entry">
+          <span class="tl-year" style="padding-right:1rem">2015</span>
+          <div class="tl-dot-col">
+            <span class="tl-dot" style="border-color:var(--green)"></span>
+          </div>
+          <div class="tl-info">
+            <div class="tl-log">INIT</div>
+            <div class="tl-title">Front-End Developer — GLOVO</div>
+            <div class="tl-desc">HTML, CSS, JavaScript, Angular. First commits. First production features.</div>
+          </div>
+          <span class="tl-tag tl-tag--green">FRONTEND</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer page 2 -->
+    <div class="footer-p2">
+      <span class="footer-txt">&gt; samih.habbani@gmail.com</span>
+      <span class="footer-txt">SAMIH HABBANI · CV · 2026</span>
+      <span class="footer-txt footer-txt--cyan">FWDAI-ENG · STATUS: AVAILABLE</span>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
