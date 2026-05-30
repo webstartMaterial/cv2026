@@ -609,6 +609,11 @@
       align-items: center;
     }
 
+    .skill-list { display: flex; flex-direction: column; gap: 4px; }
+    .skill-item { display: flex; align-items: center; gap: 6px; }
+    .skill-dot  { font-size: 6px; color: var(--green); flex-shrink: 0; opacity: 0.8; }
+    .skill-name { font-size: 8px; color: var(--text-2); letter-spacing: 0.04em; }
+
     @media print {
       html, body { width: 210mm; }
       .page2 { page-break-before: always; }
@@ -639,9 +644,9 @@
         <div class="header__name">SAMIH HABBANI</div>
         <div class="header__title">FORWARD DEPLOYED AI ENGINEER</div>
         <div class="header__pillars">
-          <span class="header__pillar">Full Stack Developer</span>
-          <span class="header__pillar-sep">·</span>
           <span class="header__pillar">Coding &amp; AI Instructor</span>
+          <span class="header__pillar-sep">·</span>
+          <span class="header__pillar">Full Stack Developer</span>
         </div>
         <div class="header__pillars" style="margin-top:4px">
           <span class="header__pillar header__pillar--site">www.samihhabbani.com</span>
@@ -747,6 +752,7 @@
         <span class="tag tag--green">PHP</span>
         <span class="tag tag--green">PostgreSQL</span>
         <span class="tag tag--green">MySQL</span>
+        <span class="tag tag--green">JAVA</span>
         <span class="tag tag--green">Tailwind</span>
       </div>
 
@@ -775,19 +781,14 @@
 
       <div class="s-label">
         <span class="s-label__slash" style="color:var(--green)">//</span>
-        <span class="s-label__text">METRICS</span>
+        <span class="s-label__text">STRENGHTS</span>
       </div>
-      <div class="metric-block">
-        <div class="metric-val">5,000+</div>
-        <div class="metric-lbl">LEARNERS TRAINED</div>
-      </div>
-      <div class="metric-block">
-        <div class="metric-val">10 YRS</div>
-        <div class="metric-lbl">TEACHING XP</div>
-      </div>
-      <div class="metric-block">
-        <div class="metric-val">8+</div>
-        <div class="metric-lbl">PROJECTS DEPLOYED</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-dot">▸</span><span class="skill-name">Communication &amp; Transfer</span></div>
+        <div class="skill-item"><span class="skill-dot">▸</span><span class="skill-name">Mentoring &amp; Coaching</span></div>
+        <div class="skill-item"><span class="skill-dot">▸</span><span class="skill-name">Client Communication</span></div>
+        <div class="skill-item"><span class="skill-dot">▸</span><span class="skill-name">Team Leadership</span></div>
+        <div class="skill-item"><span class="skill-dot">▸</span><span class="skill-name">Project Delivery &amp; Autonomy</span></div>
       </div>
 
       <div class="sb-sp"></div>
