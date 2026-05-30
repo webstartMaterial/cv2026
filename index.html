@@ -357,12 +357,17 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 9px;
+      margin-bottom: 11px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.025);
+      border-left: 2px solid var(--cyan);
     }
-    .sec-num   { font-size: 7.5px; color: var(--text-4); letter-spacing: 0.15em; font-weight: bold; }
-    .sec-slash { font-size: 7.5px; color: var(--text-4); font-weight: bold; }
-    .sec-title { font-weight: bold; font-size: 8px; color: var(--text-4); letter-spacing: 0.22em; }
-    .sec-line  { flex: 1; height: 1px; background: var(--border); }
+    .sec-num   { font-size: 7.5px; color: var(--cyan); letter-spacing: 0.15em; font-weight: 600; opacity: 0.7; }
+    .sec-slash { font-size: 7.5px; color: var(--cyan); opacity: 0.3; }
+    .sec-title { font-weight: 600; font-size: 8px; color: var(--text-3); letter-spacing: 0.22em; }
+    .sec-line  { flex: 1; height: 1px; background: rgba(0,212,255,0.1); }
+
+    .sec-block { margin-top: 18px; }
 
     /* ── Profile ───────────────────────────────────────────── */
     .profile-text {
@@ -389,7 +394,7 @@
     .build-arrow { font-size: 7.5px; color: var(--cyan); opacity: 0.55; }
 
     /* ── Projects ──────────────────────────────────────────── */
-    .projects-list { display: flex; flex-direction: column; margin-bottom: 11px; }
+    .projects-list { display: flex; flex-direction: column; }
     .project-row {
       display: grid;
       grid-template-columns: 22px 1fr auto 30px;
@@ -666,7 +671,7 @@
       </div>
       <div class="header__contact-row">
         <span class="c-label">EMAIL</span><span class="c-sep">//</span>
-        <span class="c-val" style="color:var(--cyan)">samih.habbani@gmail.com</span>
+        <span class="c-val" style="color:var(--cyan)">samihhabbani@gmail.com</span>
       </div>
     </div>
   </header>
@@ -811,8 +816,8 @@
     <!-- MAIN -->
     <main class="main">
 
-            <!-- 01 · PROFILE -->
-      <div class="sec-heading">
+      <!-- 01 · PROFILE -->
+      <div class="sec-heading" style="padding-top: 0;">
         <span class="sec-num">01</span>
         <span class="sec-slash">//</span>
         <span class="sec-title">PROFILE</span>
@@ -861,7 +866,7 @@
       <!-- <div class="divider"></div> -->
 
       <!-- 02 · EXPERIENCE -->
-      <div class="sec-heading">
+      <div class="sec-heading sec-block" style="margin-top: 0;">
         <span class="sec-num">02</span>
         <span class="sec-slash">//</span>
         <span class="sec-title">EXPERIENCE TIMELINE</span>
@@ -913,12 +918,10 @@
             <div class="tl-desc">Delivering Job-ready programs for students, job seekers and professionals.</div>
             <div class="tl-clients">
               <span class="tl-client">AFPA</span>
-              <span class="tl-client">Web Force 3</span>
               <span class="tl-client">Ifocop</span>
               <span class="tl-client">Institut G4</span>
               <span class="tl-client">La PMN</span>
               <span class="tl-client">Next Formation</span>
-              <span class="tl-client">La Fonderie</span>
               <span class="tl-client">DORANCO</span>
               <span class="tl-client">M2I Formation</span>
               <span class="tl-client">Digital College</span>
@@ -1008,7 +1011,7 @@
       <!--<div class="divider"></div>-->
 
       <!-- 03 · PROJECTS -->
-      <div class="sec-heading">
+      <div class="sec-heading sec-block">
         <span class="sec-num">03</span>
         <span class="sec-slash">//</span>
         <span class="sec-title">SELECTED PROJECTS</span>
@@ -1035,28 +1038,28 @@
         </div>
         <div class="project-row">
           <span class="project-id">004</span>
-          <span class="project-title">VSP Security</span>
+          <span class="project-title">VSP Security - Private Security Company</span>
           <span class="project-stack">PHP · OOP · Tailwind</span>
           <span class="project-year">2025</span>
         </div>
         <div class="project-row">
           <span class="project-id">005</span>
-          <span class="project-title">Exissia — IT Solutions</span>
+          <span class="project-title">Exissia — Web Agency</span>
           <span class="project-stack">HTML · CSS · PHP · OOP</span>
           <span class="project-year">2024</span>
         </div>
-        <div class="project-row">
+        <!-- <div class="project-row">
           <span class="project-id">006</span>
           <span class="project-title">Instant Chic — Photobooth Rental</span>
           <span class="project-stack">React · Next.js · Framer Motion</span>
           <span class="project-year">2024</span>
-        </div>
-        <div class="project-row">
+        </div> -->
+        <!-- <div class="project-row">
           <span class="project-id">007</span>
           <span class="project-title">Click&amp;Visible — Web Agency</span>
           <span class="project-stack">WordPress · PHP · WPML · MySQL</span>
           <span class="project-year">2022</span>
-        </div>
+        </div> -->
         <!--<div class="project-row">
           <span class="project-id">008</span>
           <span class="project-title">Internal CRM &amp; Operations Platform</span>
@@ -1067,7 +1070,7 @@
 
       <!-- Footer -->
       <div class="footer-p1" style="margin-top: auto;">
-        <span class="footer-txt">&gt; samih.habbani@gmail.com</span>
+        <span class="footer-txt">&gt; samihhabbani@gmail.com</span>
         <span class="footer-txt">SAMIH HABBANI · CV · 2026</span>
         <span class="footer-txt footer-txt--cyan">FWDAI-ENG · STATUS: AVAILABLE</span>
       </div>
