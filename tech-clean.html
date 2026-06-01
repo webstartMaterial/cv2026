@@ -36,7 +36,7 @@
       print-color-adjust: exact;
     }
 
-    .cv { width: 210mm; }
+    .cv { width: 210mm; min-height: 297mm; display: flex; flex-direction: column; }
 
     /* ── HEADER ─────────────────────────────────── */
     .header {
@@ -73,7 +73,7 @@
     .hdr-name {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 24px;
+      font-size: 25px;
       color: #ffffff;
       letter-spacing: 0.06em;
       line-height: 1;
@@ -94,7 +94,7 @@
       flex-wrap: wrap;
     }
     .hdr-pillar {
-      font-size: 7.5px;
+      font-size: 8px;
       color: rgba(255,255,255,0.5);
       letter-spacing: 0.06em;
     }
@@ -123,7 +123,7 @@
       font-size: 7.5px;
     }
     .hdr-label {
-      font-size: 6.5px;
+      font-size: 7.5px;
       color: rgba(255,255,255,0.35);
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -132,9 +132,11 @@
     .hdr-val { color: rgba(255,255,255,0.75); }
     .hdr-val--accent { color: #cbd5e1; font-weight: 500; }
     .hdr-val--yellow { color: #e2e8f0; }
+    .hdr-val--location { color: #7dd3fc; font-weight: 600; letter-spacing: 0.08em; }
 
     /* ── BODY ───────────────────────────────────── */
     .body {
+      flex: 1;
       display: grid;
       grid-template-columns: 52mm 1fr;
     }
@@ -146,9 +148,10 @@
       padding: 18px 14px 18px 18px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
-    .sb-sec { margin-bottom: 11px; }
+    .sb-sec { margin-bottom: 0; }
     .sb-heading {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
@@ -167,7 +170,7 @@
     /* Status */
     .status-row { display: flex; align-items: center; gap: 7px; }
     .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; flex-shrink: 0; }
-    .status-txt { font-size: 8.5px; font-weight: 600; color: #16a34a; letter-spacing: 0.15em; font-family: 'Poppins', sans-serif; }
+    .status-txt { font-size: 9px; font-weight: 600; color: #16a34a; letter-spacing: 0.15em; font-family: 'Poppins', sans-serif; }
 
     /* Dimensions */
     .dim-row {
@@ -176,10 +179,10 @@
       align-items: center;
       padding: 3px 0;
     }
-    .dim-name { font-size: 7.5px; color: var(--txt-2); letter-spacing: 0.04em; font-weight: 500; }
+    .dim-name { font-size: 8px; color: var(--txt-2); letter-spacing: 0.04em; font-weight: 500; }
     .dim-badge {
       font-family: 'Poppins', sans-serif;
-      font-size: 6px; font-weight: 600;
+      font-size: 6.5px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.1em;
       padding: 2px 6px; border-radius: 3px;
       white-space: nowrap;
@@ -193,9 +196,9 @@
     /* Tags */
     .tags { display: flex; flex-wrap: wrap; gap: 4px; }
     .tag {
-      font-size: 7px; font-weight: 500;
-      padding: 2px 7px; border-radius: 10px;
-      letter-spacing: 0.03em;
+      font-size: 7.5px; font-weight: 500;
+      padding: 2.5px 7px; border-radius: 1px;
+      letter-spacing: 0.06em;
     }
     .tag--teal   { background: var(--teal-lt); color: var(--teal); border: 1px solid rgba(13,126,160,0.2); }
     .tag--pink   { background: #fce7f3; color: #be185d; border: 1px solid rgba(190,24,93,0.2); }
@@ -206,7 +209,7 @@
     /* Builds */
     .sb-builds { display: flex; flex-wrap: wrap; gap: 4px; }
     .sb-build-item {
-      font-size: 7px; font-weight: 500;
+      font-size: 7.5px; font-weight: 500;
       color: var(--txt-2);
       background: #fff;
       border: 1px solid var(--border);
@@ -217,12 +220,12 @@
     .skill-list { display: flex; flex-direction: column; gap: 4px; }
     .skill-item { display: flex; align-items: center; gap: 6px; }
     .skill-dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; opacity: 0.65; }
-    .skill-name { font-size: 7.5px; color: var(--txt-2); }
+    .skill-name { font-size: 8px; color: var(--txt-2); }
 
     /* Education */
     .edu-entry { margin-bottom: 7px; padding-left: 8px; border-left: 2px solid var(--teal); }
-    .edu-degree { font-size: 7.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 2px; line-height: 1.3; }
-    .edu-school { font-size: 7px; color: var(--txt-3); }
+    .edu-degree { font-size: 8px; font-weight: 600; color: var(--txt-1); margin-bottom: 2px; line-height: 1.3; }
+    .edu-school { font-size: 8px; color: var(--txt-3); }
 
     /* Map */
     .presence-map-wrap { margin-top: 4px; }
@@ -239,14 +242,14 @@
     .map-dot-pulse { animation: map-pulse 2s ease-in-out infinite; }
 
     /* ── MAIN ───────────────────────────────────── */
-    .main { padding: 18px 26px 22px 22px; display: flex; flex-direction: column; }
+    .main { padding: 22px 30px 28px 28px; display: flex; flex-direction: column; justify-content: space-between; }
 
-    .m-sec { margin-bottom: 10px; }
+    .m-sec { margin-bottom: 0; }
 
     .sec-heading {
       display: flex; align-items: center; gap: 8px;
       font-family: 'Poppins', sans-serif;
-      font-weight: 700; font-size: 7.5px;
+      font-weight: 700; font-size: 8px;
       text-transform: uppercase; letter-spacing: 0.2em;
       color: var(--navy);
       padding: 3px 6px 3px 6px;
@@ -254,14 +257,14 @@
       background: linear-gradient(90deg, #d1d5db 0%, transparent 80%);
       border-left: 2.5px solid var(--navy);
       border-radius: 0 2px 2px 0;
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
-    .sec-num   { color: var(--navy); font-size: 7.5px; font-weight: 700; opacity: 0.45; }
+    .sec-num   { color: var(--navy); font-size: 8px; font-weight: 700; opacity: 0.45; }
     .sec-slash { color: var(--navy); opacity: 0.2; }
     .sec-title { color: var(--navy); }
     .sec-line  { flex: 1; height: 1px; background: rgba(0,0,0,0.1); }
 
-    .sec-block { margin-top: 14px; }
+    .sec-block { margin-top: 18px; }
 
     /* Metrics */
     .teach-metrics {
@@ -283,14 +286,14 @@
     }
     .teach-val {
       font-family: 'Poppins', sans-serif;
-      font-weight: 700; font-size: 13px;
+      font-weight: 700; font-size: 15px;
       color: var(--navy); line-height: 1; margin-bottom: 2px;
     }
-    .teach-val--hobby { font-size: 13px; line-height: 1; }
-    .teach-lbl { font-size: 6px; color: var(--txt-3); letter-spacing: 0.12em; text-transform: uppercase; }
+    .teach-val--hobby { font-size: 15px; line-height: 1; }
+    .teach-lbl { font-size: 6.5px; color: var(--txt-3); letter-spacing: 0.12em; text-transform: uppercase; }
 
     /* Profile text */
-    .profile-text { font-size: 8.5px; color: var(--txt-2); line-height: 1.65; margin-bottom: 8px; }
+    .profile-text { font-size: 9.5px; color: var(--txt-2); line-height: 1.65; margin-bottom: 11px; }
     .profile-text strong { color: var(--navy); font-weight: 600; }
 
     /* Timeline */
@@ -310,19 +313,20 @@
     .tl-entry {
       display: grid;
       grid-template-columns: 46px 16px 1fr auto;
-      gap: 0 10px;
+      gap: 0 12px;
       align-items: start;
-      padding: 6px 0;
+      padding: 7px 0;
       border-bottom: 1px solid var(--border);
     }
     .tl-entry:last-child { border-bottom: none; }
 
     .tl-year {
       font-family: 'Poppins', sans-serif;
-      font-size: 8px; font-weight: 600;
-      color: var(--teal);
-      padding-top: 1px; text-align: right;
-      line-height: 1;
+      font-size: 9px; font-weight: 500;
+      color: var(--txt-3);
+      letter-spacing: 0.08em;
+      padding-top: 2px; padding-right: 1rem;
+      text-align: right;
     }
     .tl-dot-col {
       display: flex; flex-direction: column; align-items: center; padding-top: 2px;
@@ -334,12 +338,12 @@
     }
 
     .tl-log { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--txt-4); margin-bottom: 2px; }
-    .tl-title { font-size: 8.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 3px; line-height: 1.3; }
-    .tl-desc { font-size: 7.5px; color: var(--txt-2); line-height: 1.5; }
+    .tl-title { font-size: 10.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 3px; line-height: 1.3; }
+    .tl-desc { font-size: 8.5px; color: var(--txt-2); line-height: 1.5; }
 
     .tl-tag {
       font-family: 'Poppins', sans-serif;
-      font-size: 6px; font-weight: 600;
+      font-size: 7px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.1em;
       padding: 3px 6px; border-radius: 3px;
       align-self: flex-start; margin-top: 1px;
@@ -372,7 +376,7 @@
     .project-row:nth-child(odd) { background: var(--bg-sb); }
     .project-row:last-child { border-bottom: none; }
     .project-id    { font-size: 7px; color: var(--txt-4); letter-spacing: 0.1em; }
-    .project-title { font-weight: 500; font-size: 8px; color: var(--txt-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .project-title { font-weight: 500; font-size: 8.5px; color: var(--txt-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .project-stack { font-size: 7px; color: #166534; letter-spacing: 0.03em; white-space: nowrap; }
     .project-year  { font-size: 7px; color: var(--txt-4); text-align: right; letter-spacing: 0.06em; }
 
@@ -431,11 +435,11 @@
       </div>
       <div class="hdr-citem">
         <span class="hdr-label">Location</span><span class="hdr-sep">/</span>
-        <span class="hdr-val hdr-val--accent">Dubai · Remote</span>
+        <span class="hdr-val hdr-val--location">Dubai · Remote</span>
       </div>
       <div class="hdr-citem">
         <span class="hdr-label">Status</span><span class="hdr-sep">/</span>
-        <span class="hdr-val hdr-val--yellow">French · Investor Visa</span>
+        <span class="hdr-val hdr-val--location">French · Investor Visa</span>
       </div>
     </div>
   </header>
@@ -514,7 +518,7 @@
           <span class="tag tag--green">PHP</span>
           <span class="tag tag--green">PostgreSQL</span>
           <span class="tag tag--green">MySQL</span>
-          <span class="tag tag--green">Java</span>
+          <span class="tag tag--green">JAVA</span>
           <span class="tag tag--green">Tailwind</span>
         </div>
       </div>
@@ -533,8 +537,8 @@
       <div class="sb-sec">
         <div class="sb-heading">Education</div>
         <div class="edu-entry">
-          <div class="edu-degree">MBA · International Management</div>
-          <div class="edu-school">Saint John's University — New York</div>
+          <div class="edu-degree">MBA International Management</div>
+          <div class="edu-school">Saint John's University — NY</div>
         </div>
         <div class="edu-entry" style="margin-bottom:0">
           <div class="edu-degree">Certificate · Web Development</div>
@@ -582,7 +586,7 @@
             <text x="175.7" y="88.2" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.5" fill="#111827" font-weight="600" opacity="0.95">DXB</text>
           </svg>
           <div class="map-legend">
-            <div class="map-legend-item"><div class="map-legend-dot map-legend-dot--client"></div>Past experience</div>
+            <div class="map-legend-item"><div class="map-legend-dot map-legend-dot--client"></div>Past clients</div>
             <div class="map-legend-item"><div class="map-legend-dot map-legend-dot--current"></div>Current</div>
           </div>
         </div>
@@ -621,6 +625,13 @@
           </div>
         </div>
 
+        <div class="teach-metrics" style="margin-top:-1px">
+          <div class="teach-metric teach-metric--hobby" style="grid-column: 1 / -1">
+            <div class="teach-val teach-val--hobby">🥋</div>
+            <div class="teach-lbl">BRAZILIAN JIU JITSU COMPETITOR</div>
+          </div>
+        </div>
+
         <p class="profile-text">
           Forward Deployed AI Engineer designing and deploying AI solutions and intelligent systems for businesses and startups.
           Full stack developer and digital educator with <strong>10 years of experience</strong> and <strong>5,000+ learners trained</strong> across France, Spain, Morocco and Dubai.
@@ -647,7 +658,7 @@
             <div class="tl-info">
               <div class="tl-log">Dubai, UAE</div>
               <div class="tl-title">Forward Deployed AI Engineer & Instructor</div>
-              <div class="tl-desc">Building and deploying AI-powered automation systems for companies through code and practical training.</div>
+              <div class="tl-desc">I build and deploy AI-powered automation systems for companies through code and practical training.</div>
               <div class="tl-clients">
                 <span class="tl-client">Morgan International</span>
                 <span class="tl-client">Octus Mindz Training</span>
@@ -703,11 +714,11 @@
               <div class="tl-desc">Started teaching coding by turning technical concepts into practical classroom learning.</div>
               <div class="tl-clients">
                 <span class="tl-client">Evogue</span>
-                <span class="tl-client">2AI Concept</span>
-                <span class="tl-client">Formawave</span>
+                <span class="tl-client">2AI CONCEPT</span>
+                <span class="tl-client">FORMAWAVE</span>
               </div>
             </div>
-            <span class="tl-tag tl-tag--edu">INSTRUCTOR</span>
+            <span class="tl-tag tl-tag--edu">TECH INSTRUCTOR</span>
           </div>
 
           <div class="tl-entry">
@@ -752,7 +763,7 @@
               <div class="tl-title">Full Stack Developer — Sopra Steria</div>
               <div class="tl-desc">Angular, Java, Spring Batch. Enterprise projects for the French Government.</div>
             </div>
-            <span class="tl-tag tl-tag--dev">FULL STACK</span>
+            <span class="tl-tag tl-tag--dev">FULL STACK DEV</span>
           </div>
 
           <div class="tl-entry">
@@ -765,7 +776,7 @@
               <div class="tl-title">Front-End Developer — Glovo</div>
               <div class="tl-desc">HTML, CSS, JavaScript, Angular. First commits. First production features.</div>
             </div>
-            <span class="tl-tag tl-tag--dev">FRONTEND</span>
+            <span class="tl-tag tl-tag--dev">FRONTEND DEV</span>
           </div>
 
         </div>
