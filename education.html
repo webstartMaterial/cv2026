@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samih Habbani — School Coordinator & Curriculum Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #1a2e4e;
+      --teal:    #0d7ea0;
+      --teal-lt: #e0f5fb;
+      --amber:   #b45309;
+      --bg:      #ffffff;
+      --bg-sb:   #f4f7fa;
+      --txt-1:   #0f172a;
+      --txt-2:   #334155;
+      --txt-3:   #64748b;
+      --txt-4:   #94a3b8;
+      --border:  #e2e8f0;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      width: 210mm;
+      background: #fff;
+      color: var(--txt-2);
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv { width: 210mm; }
+
+    /* ── HEADER ─────────────────────────────────── */
+    .header {
+      background: var(--navy);
+      padding: 18px 32px 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .hdr-photo {
+      width: 88px;
+      height: 104px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    .hdr-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .hdr-center { flex: 1; }
+    .hdr-eyebrow {
+      font-size: 7px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .hdr-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+    .hdr-role {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 10.5px;
+      color: #7dd3fc;
+      letter-spacing: 0.04em;
+      margin-bottom: 5px;
+    }
+    .hdr-pillars {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .hdr-pillar {
+      font-size: 7.5px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+    .hdr-pillar-sep { color: rgba(255,255,255,0.35); font-size: 13px; line-height: 1; }
+    .hdr-site {
+      margin-top: 7px;
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 500;
+      color: #7dd3fc;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid rgba(125,211,252,0.4);
+      padding-bottom: 1px;
+    }
+
+    .hdr-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5.5px;
+      align-items: flex-end;
+    }
+    .hdr-citem {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 7.5px;
+    }
+    .hdr-icon {
+      width: 14px; height: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 7px;
+      flex-shrink: 0;
+    }
+    .hdr-cval { color: rgba(255,255,255,0.75); }
+    .hdr-cval--accent { color: #7dd3fc; font-weight: 500; }
+    .hdr-cval--yellow { color: #fbbf24; }
+
+    /* accent bar under header */
+    .header-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal) 0%, #7dd3fc 60%, transparent 100%);
+    }
+
+    /* ── BODY ───────────────────────────────────── */
+    .body {
+      display: grid;
+      grid-template-columns: 54mm 1fr;
+    }
+
+    /* ── SIDEBAR ────────────────────────────────── */
+    .sidebar {
+      background: var(--bg-sb);
+      border-right: 1px solid var(--border);
+      padding: 18px 14px 18px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sb-sec { margin-bottom: 14px; }
+    .sb-heading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 6.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--teal);
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--teal);
+      margin-bottom: 9px;
+    }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+    }
+    .metric-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 6px 8px;
+      text-align: center;
+    }
+    .metric-val {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+    .metric-lbl {
+      font-size: 5.8px;
+      color: var(--txt-3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.35;
+    }
+
+    /* Competency list */
+    .comp-list { display: flex; flex-direction: column; gap: 5px; }
+    .comp-item {
+      display: flex; align-items: flex-start; gap: 6px;
+      font-size: 7.5px; color: var(--txt-2); line-height: 1.35;
+    }
+    .comp-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0; margin-top: 2.5px; opacity: 0.65;
+    }
+    .comp-dot--amber { background: var(--amber); }
+
+    /* Language bars */
+    .lang-list { display: flex; flex-direction: column; gap: 6px; }
+    .lang-item { display: flex; flex-direction: column; gap: 2.5px; }
+    .lang-row { display: flex; justify-content: space-between; align-items: center; }
+    .lang-name { font-size: 7.5px; font-weight: 500; color: var(--txt-2); }
+    .lang-level { font-size: 6px; color: var(--txt-4); text-transform: uppercase; letter-spacing: 0.1em; }
+    .lang-bar { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .lang-fill { height: 100%; background: var(--teal); border-radius: 2px; }
+
+    /* Education */
+    .edu-list { display: flex; flex-direction: column; gap: 8px; }
+    .edu-entry { border-left: 2px solid var(--teal); padding-left: 8px; }
+    .edu-degree { font-size: 7.5px; font-weight: 600; color: var(--txt-1); line-height: 1.3; margin-bottom: 2px; }
+    .edu-school { font-size: 7px; color: var(--txt-3); }
+
+    /* ── MAIN ───────────────────────────────────── */
+    .main { padding: 18px 26px 22px 22px; display: flex; flex-direction: column; }
+
+    .m-sec { margin-bottom: 13px; }
+
+    .m-heading {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; font-size: 7.5px;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--navy);
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--navy);
+      margin-bottom: 10px;
+    }
+    .m-heading-num { color: var(--teal); font-size: 7px; }
+
+    /* Profile */
+    .profile-text { font-size: 8.5px; color: var(--txt-2); line-height: 1.65; }
+    .profile-text strong { color: var(--navy); font-weight: 600; }
+
+    /* Experience */
+    .exp-list { display: flex; flex-direction: column; }
+    .exp-entry {
+      display: grid;
+      grid-template-columns: 30px 10px 1fr auto;
+      gap: 0 8px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-entry:last-child { border-bottom: none; }
+
+    .exp-year {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; font-size: 8px;
+      color: var(--teal); padding-top: 1px;
+      line-height: 1;
+    }
+    .exp-dot-col {
+      display: flex; flex-direction: column; align-items: center;
+      padding-top: 2px;
+    }
+    .exp-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      border: 2px solid var(--navy); background: #fff;
+      flex-shrink: 0;
+    }
+    .exp-dot--filled { background: var(--teal); border-color: var(--teal); }
+    .exp-vline {
+      flex: 1; width: 1px; background: var(--border); margin-top: 3px;
+    }
+
+    .exp-info {}
+    .exp-location { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--txt-4); margin-bottom: 2px; }
+    .exp-title { font-size: 8.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 3px; line-height: 1.3; }
+    .exp-desc { font-size: 7.5px; color: var(--txt-2); line-height: 1.5; margin-bottom: 5px; }
+    .exp-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .chip {
+      font-size: 6.2px; font-weight: 500; padding: 2px 6px;
+      border-radius: 10px; letter-spacing: 0.04em;
+    }
+    .chip--skill  { background: #dbeafe; color: #1d4ed8; }
+    .chip--org    { background: #f1f5f9; color: var(--txt-3); border: 1px solid var(--border); }
+    .chip--amber  { background: #fef3c7; color: #92400e; }
+
+    .exp-badge {
+      font-family: 'Poppins', sans-serif;
+      font-size: 6px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--navy); background: #e2e8f0;
+      padding: 3px 6px; border-radius: 3px;
+      align-self: flex-start; margin-top: 1px;
+      white-space: nowrap;
+    }
+
+    /* Programs */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .prog-card {
+      background: var(--bg-sb);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--teal);
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+    .prog-title {
+      font-size: 8px; font-weight: 600;
+      color: var(--txt-1); margin-bottom: 3px; line-height: 1.3;
+    }
+    .prog-desc {
+      font-size: 7px; color: var(--txt-3);
+      line-height: 1.45; margin-bottom: 4px;
+    }
+    .prog-meta { font-size: 6.5px; color: var(--teal); font-weight: 500; }
+
+    /* Partners */
+    .partners-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+    .partner-chip {
+      font-size: 7px; font-weight: 500;
+      color: var(--txt-2); background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 3px 9px; border-radius: 12px;
+    }
+
+    /* Expertise grid */
+    .xp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+    }
+    .xp-card {
+      background: var(--bg-sb);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--navy);
+      border-radius: 4px;
+      padding: 8px 9px;
+    }
+    .xp-card-head {
+      display: flex; align-items: center; gap: 5px;
+      margin-bottom: 7px;
+    }
+    .xp-card-icon { font-size: 9px; line-height: 1; }
+    .xp-card-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; font-size: 7px;
+      color: var(--navy); line-height: 1.3;
+    }
+    .xp-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .xp-tag {
+      font-size: 6.5px; font-weight: 500;
+      color: var(--txt-3);
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 2px 6px; border-radius: 9px;
+    }
+
+    /* Delivery formats */
+    .delivery-list { display: flex; flex-direction: column; gap: 4px; }
+    .delivery-item { display: flex; align-items: center; gap: 7px; }
+    .delivery-icon { font-size: 8px; flex-shrink: 0; line-height: 1; }
+    .delivery-label { font-size: 7.5px; color: var(--txt-2); }
+
+    /* Teaching tags */
+    .teach-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .teach-tag {
+      font-size: 7px; font-weight: 500;
+      color: var(--teal);
+      background: var(--teal-lt);
+      border: 1px solid rgba(13,126,160,0.2);
+      padding: 3px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+
+    @media print {
+      html, body { width: 210mm; }
+    }
+  </style>
+</head>
+<body>
+<div class="cv">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="hdr-photo">
+      <img src="./samih.jpg" alt="Samih Habbani"/>
+    </div>
+    <div class="hdr-center">
+      <div class="hdr-eyebrow">Curriculum Designer · Education Specialist</div>
+      <div class="hdr-name">SAMIH HABBANI</div>
+      <div class="hdr-role">School Coordinator & Curriculum Designer</div>
+      <div class="hdr-pillars">
+        <span class="hdr-pillar">Training Center Founder</span>
+        <span class="hdr-pillar-sep">·</span>
+        <span class="hdr-pillar">E-Learning Platform Founder</span>
+        <span class="hdr-pillar-sep">·</span>
+        <span class="hdr-pillar">5,000+ Learners</span>
+      </div>
+      <div class="hdr-site">www.samihhabbani.com</div>
+    </div>
+    <div class="hdr-contact">
+      <div class="hdr-citem">
+        <div class="hdr-icon">📍</div>
+        <span class="hdr-cval hdr-cval--accent">Dubai · Remote</span>
+      </div>
+      <div class="hdr-citem">
+        <div class="hdr-icon">📞</div>
+        <span class="hdr-cval">+971 50 554 8034</span>
+      </div>
+      <div class="hdr-citem">
+        <div class="hdr-icon">🔗</div>
+        <span class="hdr-cval">linkedin.com/in/samih-habbani</span>
+      </div>
+
+      <div class="hdr-citem">
+        <div class="hdr-icon">🇫🇷</div>
+        <span class="hdr-cval hdr-cval--yellow">French · Investor Visa</span>
+      </div>
+    </div>
+  </header>
+  <div class="header-bar"></div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sb-sec">
+        <div class="sb-heading">Key Metrics</div>
+        <div class="metrics-grid">
+          <div class="metric-box">
+            <div class="metric-val">5,000+</div>
+            <div class="metric-lbl">Learners<br/>Trained</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">10 yrs</div>
+            <div class="metric-lbl">Coding<br/>Experience</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">7 yrs</div>
+            <div class="metric-lbl">Curriculum<br/>Design</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">1,000+</div>
+            <div class="metric-lbl">Training<br/>Videos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Core Competencies</div>
+        <div class="comp-list">
+          <div class="comp-item"><div class="comp-dot"></div>Curriculum Design & Development</div>
+          <div class="comp-item"><div class="comp-dot"></div>E-Learning Architecture (LMS)</div>
+          <div class="comp-item"><div class="comp-dot"></div>Instructional Design</div>
+          <div class="comp-item"><div class="comp-dot"></div>Corporate Training Programs</div>
+          <div class="comp-item"><div class="comp-dot"></div>AI & Digital Education</div>
+          <div class="comp-item"><div class="comp-dot"></div>Learner Assessment & Tracking</div>
+          <div class="comp-item"><div class="comp-dot"></div>Blended Learning Design</div>
+          <div class="comp-item"><div class="comp-dot"></div>Career Transition Programs</div>
+          <div class="comp-item"><div class="comp-dot"></div>School & Program Management</div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Teaching Areas</div>
+        <div class="teach-tags">
+          <span class="teach-tag">Coding</span>
+          <span class="teach-tag">AI & Digital Transformation</span>
+          <span class="teach-tag">Digital Marketing & Strategy</span>
+          <span class="teach-tag">Project Management</span>
+          <span class="teach-tag">Content & YouTube Strategy</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Delivery Formats</div>
+        <div class="delivery-list">
+          <div class="delivery-item">
+            <span class="delivery-icon">🖥️</span>
+            <span class="delivery-label">Online / Remote</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">🏫</span>
+            <span class="delivery-label">In-Person</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">🔀</span>
+            <span class="delivery-label">Hybrid</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">⚡</span>
+            <span class="delivery-label">Bootcamp (intensive)</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">📅</span>
+            <span class="delivery-label">Workshop 1–3 days</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">🏢</span>
+            <span class="delivery-label">Corporate On-site</span>
+          </div>
+          <div class="delivery-item">
+            <span class="delivery-icon">👤</span>
+            <span class="delivery-label">1:1 Coaching</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Languages</div>
+        <div class="lang-list">
+          <div class="lang-item">
+            <div class="lang-row">
+              <span class="lang-name">French</span>
+              <span class="lang-level">Native</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-row">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Fluent</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-row">
+              <span class="lang-name">Spanish</span>
+              <span class="lang-level">Fluent</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div>
+          </div>
+          <div class="lang-item">
+            <div class="lang-row">
+              <span class="lang-name">Arabic</span>
+              <span class="lang-level">Notions</span>
+            </div>
+            <div class="lang-bar"><div class="lang-fill" style="width:22%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Education</div>
+        <div class="edu-list">
+          <div class="edu-entry">
+            <div class="edu-degree">MBA · International Management</div>
+            <div class="edu-school">Saint John's University — New York</div>
+          </div>
+          <div class="edu-entry">
+            <div class="edu-degree">Certificate · Web Development</div>
+            <div class="edu-school">Web Force 3 — Paris</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Strengths</div>
+        <div class="comp-list">
+          <div class="comp-item"><div class="comp-dot comp-dot--amber"></div>Pedagogical Communication</div>
+          <div class="comp-item"><div class="comp-dot comp-dot--amber"></div>Mentoring & Coaching</div>
+          <div class="comp-item"><div class="comp-dot comp-dot--amber"></div>Team Leadership</div>
+          <div class="comp-item"><div class="comp-dot comp-dot--amber"></div>Stakeholder & Partner Relations</div>
+          <div class="comp-item"><div class="comp-dot comp-dot--amber"></div>Program Delivery & Autonomy</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- 01 · Profile -->
+      <div class="m-sec">
+        <div class="m-heading"><span class="m-heading-num">01 —</span>Profile</div>
+        <p class="profile-text">
+          Education specialist and curriculum designer with <strong>10 years</strong> of experience building and scaling digital learning programs.
+          Founded a training center and an e-learning platform serving <strong>5,000+ learners</strong> across France, Spain, Morocco and Dubai.
+          Expert in designing job-ready curricula for web development, digital skills and AI — for students, job seekers, professionals and corporate teams.
+          Creator of <strong>1,000+ educational videos</strong> and adaptive learning pathways designed to accelerate career transitions in technology.
+        </p>
+      </div>
+
+      <!-- 02 · Experience -->
+      <div class="m-sec">
+        <div class="m-heading"><span class="m-heading-num">02 —</span>Education & Training Experience</div>
+        <div class="exp-list">
+
+          <div class="exp-entry">
+            <span class="exp-year">2026</span>
+            <div class="exp-dot-col">
+              <span class="exp-dot exp-dot--filled"></span>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-info">
+              <div class="exp-location">Dubai, UAE</div>
+              <div class="exp-title">AI Education Consultant & Instructor</div>
+              <div class="exp-desc">Designed and delivered AI literacy programs and automation workshops for international companies. Built custom learning pathways for non-technical professionals and executive teams, combining hands-on tools with practical business applications.</div>
+              <div class="exp-chips">
+                <span class="chip chip--org">Morgan International</span>
+                <span class="chip chip--org">Octus Mindz Training</span>
+                <span class="chip chip--org">The Kid Space</span>
+                <span class="chip chip--org">Wood Wizards</span>
+                <span class="chip chip--skill">AI Workshops</span>
+                <span class="chip chip--skill">Corporate Training</span>
+                <span class="chip chip--skill">Custom Programs</span>
+              </div>
+            </div>
+            <span class="exp-badge">AI Education</span>
+          </div>
+
+          <div class="exp-entry">
+            <span class="exp-year">2022</span>
+            <div class="exp-dot-col">
+              <span class="exp-dot exp-dot--filled"></span>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-info">
+              <div class="exp-location">Paris, France</div>
+              <div class="exp-title">Founder & Curriculum Designer — Académie WS</div>
+              <div class="exp-desc">Built a full e-learning platform from the ground up. Designed and produced 1,000+ video lessons, structured adaptive pathways, and managed the complete instructional design cycle — from needs analysis to learner assessment and platform deployment.</div>
+              <div class="exp-chips">
+                <span class="chip chip--skill">Instructional Design</span>
+                <span class="chip chip--skill">LMS Platform</span>
+                <span class="chip chip--skill">Video Production</span>
+                <span class="chip chip--skill">Adaptive Pathways</span>
+              </div>
+            </div>
+            <span class="exp-badge">LMS Founder</span>
+          </div>
+
+          <div class="exp-entry">
+            <span class="exp-year">2020</span>
+            <div class="exp-dot-col">
+              <span class="exp-dot exp-dot--filled"></span>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-info">
+              <div class="exp-location">Paris, France</div>
+              <div class="exp-title">Founder & Digital Education Specialist — Web Start</div>
+              <div class="exp-desc">Founded and managed a training center delivering job-ready digital programs for students, job seekers and professionals. Built partnerships with major French institutions and designed CPF/OPCO-eligible programs for professional retraining.</div>
+              <div class="exp-chips">
+                <span class="chip chip--org">AFPA</span>
+                <span class="chip chip--org">M2I Formation</span>
+                <span class="chip chip--org">Ifocop</span>
+                <span class="chip chip--org">DORANCO</span>
+                <span class="chip chip--org">IIM Devinci</span>
+                <span class="chip chip--org">My Digital School</span>
+                <span class="chip chip--skill">Program Management</span>
+                <span class="chip chip--skill">Career Transition</span>
+              </div>
+            </div>
+            <span class="exp-badge">Training Center</span>
+          </div>
+
+          <div class="exp-entry">
+            <span class="exp-year">2019</span>
+            <div class="exp-dot-col">
+              <span class="exp-dot"></span>
+              <div class="exp-vline"></div>
+            </div>
+            <div class="exp-info">
+              <div class="exp-location">Paris, France</div>
+              <div class="exp-title">Freelance Digital & Coding Instructor</div>
+              <div class="exp-desc">Taught web development and digital skills across institutions. Designed course materials and practical exercises adapted to adult learners and career changers entering the tech industry.</div>
+              <div class="exp-chips">
+                <span class="chip chip--org">Evogue</span>
+                <span class="chip chip--org">2AI Concept</span>
+                <span class="chip chip--org">Formawave</span>
+              </div>
+            </div>
+            <span class="exp-badge">Instructor</span>
+          </div>
+
+          <div class="exp-entry">
+            <span class="exp-year">2015<br/>– 19</span>
+            <div class="exp-dot-col">
+              <span class="exp-dot" style="border-color:var(--teal); opacity:0.5"></span>
+            </div>
+            <div class="exp-info">
+              <div class="exp-location">Barcelona · Malaga, Spain</div>
+              <div class="exp-title">Full Stack Developer & Senior Engineer</div>
+              <div class="exp-desc">4 years as a professional developer in Spain before transitioning into education. This industry background gives direct credibility when designing and teaching technical curricula — learners are trained by someone who has shipped real production software.</div>
+              <div class="exp-chips">
+                <span class="chip chip--org">Glovo — Frontend Dev</span>
+                <span class="chip chip--org">Sopra Steria — Full Stack</span>
+                <span class="chip chip--org">Accenture — Senior Java Dev</span>
+                <span class="chip chip--amber">Angular · Java · Spring · JavaScript · PHP · Python</span>
+              </div>
+            </div>
+            <span class="exp-badge" style="opacity:0.6">Tech Background</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 03 · Programs -->
+      <div class="m-sec">
+        <div class="m-heading"><span class="m-heading-num">03 —</span>Programs Designed</div>
+        <div class="programs-grid">
+          <div class="prog-card">
+            <div class="prog-title">AI Literacy & Automation Workshops</div>
+            <div class="prog-desc">Practical AI integration for non-technical professionals. Covers prompt engineering, AI tools and workflow automation.</div>
+            <div class="prog-meta">1–3 days · Corporate · Multilingual</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-title">Web Development Bootcamp</div>
+            <div class="prog-desc">Intensive job-ready program for career changers. HTML/CSS, JavaScript, frameworks and deployment. No prior experience required.</div>
+            <div class="prog-meta">12–24 weeks · CPF/OPCO eligible</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-title">Digital Skills Certification</div>
+            <div class="prog-desc">Modular upskilling pathway covering digital tools, productivity, e-commerce and digital marketing for employees.</div>
+            <div class="prog-meta">4–8 weeks · Blended delivery</div>
+          </div>
+          <div class="prog-card">
+            <div class="prog-title">Coding for Kids</div>
+            <div class="prog-desc">Age-adapted introduction to coding logic, web basics and game design. Project-based approach for ages 8–15.</div>
+            <div class="prog-meta">After-school & holiday · Ages 8–15</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 · Expertise -->
+      <div class="m-sec">
+        <div class="m-heading"><span class="m-heading-num">04 —</span>Areas of Expertise</div>
+        <div class="xp-grid">
+
+          <div class="xp-card">
+            <div class="xp-card-head">
+              <span class="xp-card-icon">🤖</span>
+              <span class="xp-card-title">AI & Automation</span>
+            </div>
+            <div class="xp-tags">
+              <span class="xp-tag">Claude API</span>
+              <span class="xp-tag">OpenAI</span>
+              <span class="xp-tag">LangChain</span>
+              <span class="xp-tag">RAG</span>
+              <span class="xp-tag">n8n</span>
+              <span class="xp-tag">Python</span>
+              <span class="xp-tag">Prompt Engineering</span>
+            </div>
+          </div>
+
+          <div class="xp-card">
+            <div class="xp-card-head">
+              <span class="xp-card-icon">💻</span>
+              <span class="xp-card-title">Web & Software Development</span>
+            </div>
+            <div class="xp-tags">
+              <span class="xp-tag">Web Development</span>
+              <span class="xp-tag">Backend Development</span>
+              <span class="xp-tag">Mobile App Development</span>
+              <span class="xp-tag">CMS & Dev Tools</span>
+              <span class="xp-tag">Software Engineering</span>
+            </div>
+          </div>
+
+          <div class="xp-card">
+            <div class="xp-card-head">
+              <span class="xp-card-icon">📈</span>
+              <span class="xp-card-title">Digital Marketing & Entrepreneurship</span>
+            </div>
+            <div class="xp-tags">
+              <span class="xp-tag">Digital Marketing & Growth</span>
+              <span class="xp-tag">Business & Entrepreneurship</span>
+              <span class="xp-tag">Creative & Multimedia</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</div>
+</body>
+</html>
