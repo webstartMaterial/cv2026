@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samih Habbani — Forward Deployed AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0e1520;
+      --teal:    #6b7280;
+      --teal-lt: #f3f4f6;
+      --amber:   #9ca3af;
+      --bg:      #ffffff;
+      --bg-sb:   #f3f4f6;
+      --txt-1:   #111827;
+      --txt-2:   #374151;
+      --txt-3:   #6b7280;
+      --txt-4:   #9ca3af;
+      --border:  #d1d5db;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    html, body {
+      width: 210mm;
+      background: #fff;
+      color: var(--txt-2);
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv { width: 210mm; }
+
+    /* ── HEADER ─────────────────────────────────── */
+    .header {
+      background: var(--navy);
+      padding: 15px 32px 13px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 3px solid var(--teal);
+    }
+
+    .hdr-photo {
+      width: 88px;
+      height: 104px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.15);
+    }
+    .hdr-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .hdr-center { flex: 1; }
+    .hdr-eyebrow {
+      font-size: 7px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .hdr-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+    .hdr-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 10.5px;
+      color: #cbd5e1;
+      letter-spacing: 0.04em;
+      margin-bottom: 5px;
+    }
+    .hdr-pillars {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .hdr-pillar {
+      font-size: 7.5px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+    }
+    .hdr-pillar-sep { color: rgba(255,255,255,0.35); font-size: 13px; line-height: 1; }
+    .hdr-site {
+      margin-top: 7px;
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 500;
+      color: #cbd5e1;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid rgba(203,213,225,0.4);
+      padding-bottom: 1px;
+    }
+
+    .hdr-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5.5px;
+      align-items: flex-end;
+    }
+    .hdr-citem {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 7.5px;
+    }
+    .hdr-label {
+      font-size: 6.5px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .hdr-sep { color: var(--teal); opacity: 0.6; font-size: 8px; }
+    .hdr-val { color: rgba(255,255,255,0.75); }
+    .hdr-val--accent { color: #cbd5e1; font-weight: 500; }
+    .hdr-val--yellow { color: #e2e8f0; }
+
+    /* ── BODY ───────────────────────────────────── */
+    .body {
+      display: grid;
+      grid-template-columns: 52mm 1fr;
+    }
+
+    /* ── SIDEBAR ────────────────────────────────── */
+    .sidebar {
+      background: var(--bg-sb);
+      border-right: 1px solid var(--border);
+      padding: 18px 14px 18px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sb-sec { margin-bottom: 11px; }
+    .sb-heading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 6.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--navy);
+      padding: 3px 6px 3px 6px;
+      margin-left: -6px;
+      background: linear-gradient(90deg, #d1d5db 0%, transparent 80%);
+      border-left: 2.5px solid var(--navy);
+      border-radius: 0 2px 2px 0;
+      margin-bottom: 8px;
+    }
+
+    /* Status */
+    .status-row { display: flex; align-items: center; gap: 7px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; flex-shrink: 0; }
+    .status-txt { font-size: 8.5px; font-weight: 600; color: #16a34a; letter-spacing: 0.15em; font-family: 'Poppins', sans-serif; }
+
+    /* Dimensions */
+    .dim-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3px 0;
+    }
+    .dim-name { font-size: 7.5px; color: var(--txt-2); letter-spacing: 0.04em; font-weight: 500; }
+    .dim-badge {
+      font-family: 'Poppins', sans-serif;
+      font-size: 6px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 2px 6px; border-radius: 3px;
+      white-space: nowrap;
+    }
+    .dim-badge--teal   { color: var(--teal);  background: var(--teal-lt); }
+    .dim-badge--pink   { color: #be185d;      background: #fce7f3; }
+    .dim-badge--navy   { color: var(--navy);  background: #e2e8f0; }
+    .dim-badge--amber  { color: var(--txt-2); background: #e5e7eb; }
+    .dim-badge--green  { color: #166534;      background: #dcfce7; }
+
+    /* Tags */
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      font-size: 7px; font-weight: 500;
+      padding: 2px 7px; border-radius: 10px;
+      letter-spacing: 0.03em;
+    }
+    .tag--teal   { background: var(--teal-lt); color: var(--teal); border: 1px solid rgba(13,126,160,0.2); }
+    .tag--pink   { background: #fce7f3; color: #be185d; border: 1px solid rgba(190,24,93,0.2); }
+    .tag--navy   { background: #e8edf5; color: var(--navy); border: 1px solid rgba(26,46,78,0.15); }
+    .tag--green  { background: #dcfce7; color: #166534; border: 1px solid rgba(22,101,52,0.2); }
+    .tag--amber  { background: #e5e7eb; color: var(--txt-2); border: 1px solid var(--border); }
+
+    /* Builds */
+    .sb-builds { display: flex; flex-wrap: wrap; gap: 4px; }
+    .sb-build-item {
+      font-size: 7px; font-weight: 500;
+      color: var(--txt-2);
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 2px 7px; border-radius: 3px;
+    }
+
+    /* Skills list */
+    .skill-list { display: flex; flex-direction: column; gap: 4px; }
+    .skill-item { display: flex; align-items: center; gap: 6px; }
+    .skill-dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; opacity: 0.65; }
+    .skill-name { font-size: 7.5px; color: var(--txt-2); }
+
+    /* Education */
+    .edu-entry { margin-bottom: 7px; padding-left: 8px; border-left: 2px solid var(--teal); }
+    .edu-degree { font-size: 7.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 2px; line-height: 1.3; }
+    .edu-school { font-size: 7px; color: var(--txt-3); }
+
+    /* Map */
+    .presence-map-wrap { margin-top: 4px; }
+    .presence-map-wrap svg { display: block; width: 100%; height: auto; border-radius: 4px; }
+    .map-legend { display: flex; gap: 10px; margin-top: 5px; }
+    .map-legend-item { display: flex; align-items: center; gap: 4px; font-size: 6.5px; color: var(--txt-3); letter-spacing: 0.05em; }
+    .map-legend-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .map-legend-dot--client  { background: var(--teal); }
+    .map-legend-dot--current { background: var(--amber); }
+    @keyframes map-pulse {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.5; }
+    }
+    .map-dot-pulse { animation: map-pulse 2s ease-in-out infinite; }
+
+    /* ── MAIN ───────────────────────────────────── */
+    .main { padding: 18px 26px 22px 22px; display: flex; flex-direction: column; }
+
+    .m-sec { margin-bottom: 10px; }
+
+    .sec-heading {
+      display: flex; align-items: center; gap: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 7.5px;
+      text-transform: uppercase; letter-spacing: 0.2em;
+      color: var(--navy);
+      padding: 3px 6px 3px 6px;
+      margin-left: -6px;
+      background: linear-gradient(90deg, #d1d5db 0%, transparent 80%);
+      border-left: 2.5px solid var(--navy);
+      border-radius: 0 2px 2px 0;
+      margin-bottom: 10px;
+    }
+    .sec-num   { color: var(--navy); font-size: 7.5px; font-weight: 700; opacity: 0.45; }
+    .sec-slash { color: var(--navy); opacity: 0.2; }
+    .sec-title { color: var(--navy); }
+    .sec-line  { flex: 1; height: 1px; background: rgba(0,0,0,0.1); }
+
+    .sec-block { margin-top: 14px; }
+
+    /* Metrics */
+    .teach-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+    .teach-metric {
+      background: var(--bg-sb);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--teal);
+      border-radius: 3px;
+      padding: 7px 10px;
+    }
+    .teach-metric--hobby {
+      grid-column: 1 / -1;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .teach-val {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 13px;
+      color: var(--navy); line-height: 1; margin-bottom: 2px;
+    }
+    .teach-val--hobby { font-size: 13px; line-height: 1; }
+    .teach-lbl { font-size: 6px; color: var(--txt-3); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* Profile text */
+    .profile-text { font-size: 8.5px; color: var(--txt-2); line-height: 1.65; margin-bottom: 8px; }
+    .profile-text strong { color: var(--navy); font-weight: 600; }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 46px;
+      top: 8px; bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
+    .tl-entry {
+      display: grid;
+      grid-template-columns: 46px 16px 1fr auto;
+      gap: 0 10px;
+      align-items: start;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tl-entry:last-child { border-bottom: none; }
+
+    .tl-year {
+      font-family: 'Poppins', sans-serif;
+      font-size: 8px; font-weight: 600;
+      color: var(--teal);
+      padding-top: 1px; text-align: right;
+      line-height: 1;
+    }
+    .tl-dot-col {
+      display: flex; flex-direction: column; align-items: center; padding-top: 2px;
+    }
+    .tl-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      border: 2px solid; background: #fff;
+      flex-shrink: 0;
+    }
+
+    .tl-log { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--txt-4); margin-bottom: 2px; }
+    .tl-title { font-size: 8.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 3px; line-height: 1.3; }
+    .tl-desc { font-size: 7.5px; color: var(--txt-2); line-height: 1.5; }
+
+    .tl-tag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 6px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 3px 6px; border-radius: 3px;
+      align-self: flex-start; margin-top: 1px;
+      white-space: nowrap;
+    }
+    .tl-tag--fwdai  { color: #be185d;          background: #fce7f3; border: 1px solid rgba(190,24,93,0.2); }
+    .tl-tag--edu    { color: #1d4ed8;         background: #dbeafe; }
+    .tl-tag--dev    { color: #166534;         background: #dcfce7; }
+    .tl-tag--grey   { color: var(--txt-3);    background: #ede8dc; border: 1px solid var(--border); }
+
+    .tl-clients { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
+    .tl-client {
+      font-size: 6.5px; font-weight: 500;
+      color: var(--txt-3);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 2px 6px; border-radius: 10px;
+    }
+
+    /* Projects */
+    .projects-list { display: flex; flex-direction: column; }
+    .project-row {
+      display: grid;
+      grid-template-columns: 22px 1fr auto 32px;
+      gap: 8px;
+      align-items: center;
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-row:nth-child(odd) { background: var(--bg-sb); }
+    .project-row:last-child { border-bottom: none; }
+    .project-id    { font-size: 7px; color: var(--txt-4); letter-spacing: 0.1em; }
+    .project-title { font-weight: 500; font-size: 8px; color: var(--txt-1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .project-stack { font-size: 7px; color: #166534; letter-spacing: 0.03em; white-space: nowrap; }
+    .project-year  { font-size: 7px; color: var(--txt-4); text-align: right; letter-spacing: 0.06em; }
+
+    /* Footer */
+    .footer-p1 {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-txt { font-size: 6.5px; color: var(--txt-4); letter-spacing: 0.1em; }
+    .footer-txt--accent { color: var(--teal); }
+
+    @media print {
+      html, body { width: 210mm; }
+    }
+  </style>
+</head>
+<body>
+<div class="cv">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="hdr-photo">
+      <img src="./samih.jpg" alt="Samih Habbani" />
+    </div>
+    <div class="hdr-center">
+      <div class="hdr-eyebrow">Forward Deployed AI Engineer · Full Stack Developer</div>
+      <div class="hdr-name">SAMIH HABBANI</div>
+      <div class="hdr-title">Forward Deployed AI Engineer</div>
+      <div class="hdr-pillars">
+        <span class="hdr-pillar">Coding &amp; AI Instructor</span>
+        <span class="hdr-pillar-sep">·</span>
+        <span class="hdr-pillar">Full Stack Developer</span>
+      </div>
+      <div class="hdr-site">www.samihhabbani.com</div>
+    </div>
+    <div class="hdr-contact">
+      <div class="hdr-citem">
+        <span class="hdr-label">LinkedIn</span><span class="hdr-sep">/</span>
+        <span class="hdr-val">linkedin.com/in/samih-habbani</span>
+      </div>
+      <div class="hdr-citem">
+        <span class="hdr-label">GitHub</span><span class="hdr-sep">/</span>
+        <span class="hdr-val">github.com/samihhabbani</span>
+      </div>
+      <div class="hdr-citem">
+        <span class="hdr-label">Phone</span><span class="hdr-sep">/</span>
+        <span class="hdr-val hdr-val--accent">+971 50 554 8034</span>
+      </div>
+      <div class="hdr-citem">
+        <span class="hdr-label">Email</span><span class="hdr-sep">/</span>
+        <span class="hdr-val hdr-val--accent">samihhabbani@gmail.com</span>
+      </div>
+      <div class="hdr-citem">
+        <span class="hdr-label">Location</span><span class="hdr-sep">/</span>
+        <span class="hdr-val hdr-val--accent">Dubai · Remote</span>
+      </div>
+      <div class="hdr-citem">
+        <span class="hdr-label">Status</span><span class="hdr-sep">/</span>
+        <span class="hdr-val hdr-val--yellow">French · Investor Visa</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sb-sec">
+        <div class="sb-heading">Status</div>
+        <div class="status-row">
+          <span class="status-dot"></span>
+          <span class="status-txt">AVAILABLE</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Dimensions</div>
+        <div class="dim-row">
+          <span class="dim-name">FWDAI Engineer</span>
+          <span class="dim-badge dim-badge--pink">AUTOMATED</span>
+        </div>
+        <div class="dim-row">
+          <span class="dim-name">AI Instructor</span>
+          <span class="dim-badge dim-badge--navy">ACTIVE</span>
+        </div>
+        <div class="dim-row">
+          <span class="dim-name">Full Stack Dev</span>
+          <span class="dim-badge dim-badge--green">DEPLOYED</span>
+        </div>
+        <div class="dim-row">
+          <span class="dim-name">Content Creator</span>
+          <span class="dim-badge dim-badge--amber">RUNNING</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">AI · LLM</div>
+        <div class="tags">
+          <span class="tag tag--pink">Claude API</span>
+          <span class="tag tag--pink">OpenAI</span>
+          <span class="tag tag--pink">LangChain</span>
+          <span class="tag tag--pink">RAG</span>
+          <span class="tag tag--pink">n8n</span>
+          <span class="tag tag--pink">Python</span>
+          <span class="tag tag--pink">Prompt Eng.</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Builds</div>
+        <div class="sb-builds">
+          <span class="sb-build-item">AI agents</span>
+          <span class="sb-build-item">Chatbots</span>
+          <span class="sb-build-item">RAG pipelines</span>
+          <span class="sb-build-item">LLM</span>
+          <span class="sb-build-item">MCP</span>
+          <span class="sb-build-item">SaaS</span>
+          <span class="sb-build-item">LMS platforms</span>
+          <span class="sb-build-item">Dashboards</span>
+          <span class="sb-build-item">REST APIs</span>
+          <span class="sb-build-item">Websites</span>
+          <span class="sb-build-item">Mobile App</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Web · Full Stack</div>
+        <div class="tags">
+          <span class="tag tag--green">React</span>
+          <span class="tag tag--green">Next.js</span>
+          <span class="tag tag--green">Symfony</span>
+          <span class="tag tag--green">Node.js</span>
+          <span class="tag tag--green">PHP</span>
+          <span class="tag tag--green">PostgreSQL</span>
+          <span class="tag tag--green">MySQL</span>
+          <span class="tag tag--green">Java</span>
+          <span class="tag tag--green">Tailwind</span>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Strengths</div>
+        <div class="skill-list">
+          <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Communication &amp; Transfer</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Mentoring &amp; Coaching</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Client Communication</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Team Leadership</span></div>
+          <div class="skill-item"><span class="skill-dot"></span><span class="skill-name">Project Delivery &amp; Autonomy</span></div>
+        </div>
+      </div>
+
+      <div class="sb-sec">
+        <div class="sb-heading">Education</div>
+        <div class="edu-entry">
+          <div class="edu-degree">MBA · International Management</div>
+          <div class="edu-school">Saint John's University — New York</div>
+        </div>
+        <div class="edu-entry" style="margin-bottom:0">
+          <div class="edu-degree">Certificate · Web Development</div>
+          <div class="edu-school">Web Force 3 — Paris</div>
+        </div>
+      </div>
+
+      <div class="sb-sec" style="margin-bottom:0">
+        <div class="sb-heading">Worldwide Experience</div>
+        <div class="presence-map-wrap">
+          <svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+            <!-- coord system: x=(lon+15)/80*200  y=(54-lat)/34*110 -->
+            <rect width="200" height="110" fill="#e5e7eb" rx="2"/>
+            <path d="M24,0 L33,0 L36,5 L31,9 L27,7 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4" opacity="0.8"/>
+            <path d="M42,9.7 L45.5,11.3 L53,14.6 L56.3,21 L55.3,33.3 L45.3,37.2 L33.3,34.3 L32.5,22 L25.8,18.1 L33.5,13.9 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.5"/>
+            <path d="M14.5,30.6 L25,31.2 L33.3,34.3 L45.3,37.2 L38.5,50 L31.5,55.3 L24,58 L19,55 L15.3,55 L13.8,49.4 L13.8,39.4 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.5"/>
+            <path d="M55,29.7 L65,23.2 L72,27.4 L79.8,40.6 L83.8,43.8 L76.8,51.8 L73.3,41.5 L68.8,38.5 L59.8,31.2 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.5"/>
+            <path d="M74,30 L84,25 L95,27 L100,32 L97,38 L88,41 L79,40 L74,36 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M97,30 L116,27 L132,29 L137,34 L133,40 L118,42 L104,40 L97,36 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M32.3,57.9 L30,57.6 L22.8,56 L21.8,58.8 L20.5,62.1 L18.3,63.4 L15,73.2 L15.8,82.4 L32.3,82.4 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.5"/>
+            <path d="M32.3,57.9 L37.5,53 L46,52 L58,52 L65,53 L68,57 L68,82.4 L32.3,82.4 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M68,57 L88,51 L108,51 L123,53 L128,58 L125,72 L116,82 L88,83 L68,82 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M123,53 L130,51 L134,58 L127,62 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M119,40 L133,40 L140,44 L138,53 L128,58 L123,53 L114,49 L110,43 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M133,40 L155,38 L170,39 L182,44 L186,52 L182,53 L172,49 L158,48 L144,49 L135,53 L138,53 L140,44 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.4"/>
+            <path d="M127,62 L134,58 L135,53 L144,49 L158,48 L172,49 L182,53 L190,62 L190,73 L185,83 L180,92 L174,102 L163,110 L148,110 L135,110 L124,101 L120,87 L120,77 L122,67 Z" fill="#e5e7eb" stroke="#9ca3af" stroke-width="0.5"/>
+            <!-- Route line -->
+            <polyline points="43.4,16.7 28.3,43.9 18.5,66.1 175.7,93.2" fill="none" stroke="#6b7280" stroke-width="0.7" stroke-dasharray="2.5,2" opacity="0.5"/>
+            <!-- Paris -->
+            <circle cx="43.4" cy="16.7" r="2.5" fill="#374151" opacity="0.95"/>
+            <circle cx="43.4" cy="16.7" r="4.5" fill="none" stroke="#6b7280" stroke-width="0.5" opacity="0.4"/>
+            <!-- Madrid -->
+            <circle cx="28.3" cy="43.9" r="2.5" fill="#374151" opacity="0.95"/>
+            <circle cx="28.3" cy="43.9" r="4.5" fill="none" stroke="#6b7280" stroke-width="0.5" opacity="0.4"/>
+            <!-- Casablanca -->
+            <circle cx="18.5" cy="66.1" r="2.5" fill="#374151" opacity="0.95"/>
+            <circle cx="18.5" cy="66.1" r="4.5" fill="none" stroke="#6b7280" stroke-width="0.5" opacity="0.4"/>
+            <!-- Dubai -->
+            <circle class="map-dot-pulse" cx="175.7" cy="93.2" r="2.5" fill="#111827"/>
+            <circle cx="175.7" cy="93.2" r="5" fill="none" stroke="#111827" stroke-width="0.5" opacity="0.4"/>
+            <!-- Labels -->
+            <text x="43.4" y="11.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.5" fill="#374151" opacity="0.9">FR</text>
+            <text x="28.3" y="39.4" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.5" fill="#374151" opacity="0.9">ES</text>
+            <text x="22"   y="61"   text-anchor="middle" font-family="Inter,sans-serif" font-size="4.5" fill="#374151" opacity="0.9">MA</text>
+            <text x="175.7" y="88.2" text-anchor="middle" font-family="Inter,sans-serif" font-size="4.5" fill="#111827" font-weight="600" opacity="0.95">DXB</text>
+          </svg>
+          <div class="map-legend">
+            <div class="map-legend-item"><div class="map-legend-dot map-legend-dot--client"></div>Past experience</div>
+            <div class="map-legend-item"><div class="map-legend-dot map-legend-dot--current"></div>Current</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- 01 · PROFILE -->
+      <div class="m-sec">
+        <div class="sec-heading">
+          <span class="sec-num">01</span>
+          <span class="sec-slash">//</span>
+          <span class="sec-title">Profile</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="teach-metrics">
+          <div class="teach-metric">
+            <div class="teach-val">10 YRS</div>
+            <div class="teach-lbl">Experience in Coding</div>
+          </div>
+          <div class="teach-metric">
+            <div class="teach-val">7 YRS</div>
+            <div class="teach-lbl">Curriculum Design</div>
+          </div>
+          <div class="teach-metric">
+            <div class="teach-val">5,000+</div>
+            <div class="teach-lbl">Learners Trained</div>
+          </div>
+          <div class="teach-metric">
+            <div class="teach-val">1,000+</div>
+            <div class="teach-lbl">Training Videos</div>
+          </div>
+        </div>
+
+        <p class="profile-text">
+          Forward Deployed AI Engineer designing and deploying AI solutions and intelligent systems for businesses and startups.
+          Full stack developer and digital educator with <strong>10 years of experience</strong> and <strong>5,000+ learners trained</strong> across France, Spain, Morocco and Dubai.
+          Content creator and curriculum designer to accelerate career transitions through practical tech education.
+        </p>
+      </div>
+
+      <!-- 02 · EXPERIENCE -->
+      <div class="m-sec">
+        <div class="sec-heading sec-block" style="margin-top:0">
+          <span class="sec-num">02</span>
+          <span class="sec-slash">//</span>
+          <span class="sec-title">Experience Timeline</span>
+          <div class="sec-line"></div>
+        </div>
+
+        <div class="timeline">
+
+          <div class="tl-entry">
+            <span class="tl-year">2026</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--amber); background:rgba(180,83,9,0.08)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Dubai, UAE</div>
+              <div class="tl-title">Forward Deployed AI Engineer & Instructor</div>
+              <div class="tl-desc">Building and deploying AI-powered automation systems for companies through code and practical training.</div>
+              <div class="tl-clients">
+                <span class="tl-client">Morgan International</span>
+                <span class="tl-client">Octus Mindz Training</span>
+                <span class="tl-client">The Kid Space</span>
+                <span class="tl-client">Wood Wizards</span>
+              </div>
+            </div>
+            <span class="tl-tag tl-tag--fwdai">FWDAI</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2022</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--teal)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Paris, France</div>
+              <div class="tl-title">Founder & Curriculum Designer — Académie WS</div>
+              <div class="tl-desc">E-learning platform, curriculum design, educational videos and tech storytelling at scale.</div>
+            </div>
+            <span class="tl-tag tl-tag--edu">LMS PLATFORM</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2020</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--teal)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Paris, France</div>
+              <div class="tl-title">Founder & Digital Education Specialist — Web Start</div>
+              <div class="tl-desc">Designed job-ready digital programs for students, job seekers and professionals.</div>
+              <div class="tl-clients">
+                <span class="tl-client">AFPA</span>
+                <span class="tl-client">M2I Formation</span>
+                <span class="tl-client">Ifocop</span>
+                <span class="tl-client">DORANCO</span>
+                <span class="tl-client">IIM Devinci</span>
+                <span class="tl-client">My Digital School</span>
+              </div>
+            </div>
+            <span class="tl-tag tl-tag--edu">TRAINING CENTER</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2019</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--teal)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Paris, France</div>
+              <div class="tl-title">Freelance Coding Instructor</div>
+              <div class="tl-desc">Started teaching coding by turning technical concepts into practical classroom learning.</div>
+              <div class="tl-clients">
+                <span class="tl-client">Evogue</span>
+                <span class="tl-client">2AI Concept</span>
+                <span class="tl-client">Formawave</span>
+              </div>
+            </div>
+            <span class="tl-tag tl-tag--edu">INSTRUCTOR</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2019</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--navy)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Paris, France</div>
+              <div class="tl-title">Freelance Full Stack Developer & IT Consultant</div>
+              <div class="tl-desc">Built and deployed websites, platforms and software solutions for clients across multiple industries.</div>
+              <div class="tl-clients">
+                <span class="tl-client">Clairfy</span>
+                <span class="tl-client">Exissia</span>
+                <span class="tl-client">Oracom Group</span>
+                <span class="tl-client">Itecom Art Design</span>
+              </div>
+            </div>
+            <span class="tl-tag tl-tag--dev">FREELANCE</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2018</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--navy)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Malaga, Spain</div>
+              <div class="tl-title">Senior Java Developer — Accenture</div>
+              <div class="tl-desc">Java Spring. Structured back-end systems. Client projects. Production architectures.</div>
+            </div>
+            <span class="tl-tag tl-tag--dev">SENIOR DEV</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2016</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--navy)"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Barcelona, Spain</div>
+              <div class="tl-title">Full Stack Developer — Sopra Steria</div>
+              <div class="tl-desc">Angular, Java, Spring Batch. Enterprise projects for the French Government.</div>
+            </div>
+            <span class="tl-tag tl-tag--dev">FULL STACK</span>
+          </div>
+
+          <div class="tl-entry">
+            <span class="tl-year">2015</span>
+            <div class="tl-dot-col">
+              <span class="tl-dot" style="border-color:var(--navy); opacity:0.5"></span>
+            </div>
+            <div class="tl-info">
+              <div class="tl-log">Barcelona, Spain</div>
+              <div class="tl-title">Front-End Developer — Glovo</div>
+              <div class="tl-desc">HTML, CSS, JavaScript, Angular. First commits. First production features.</div>
+            </div>
+            <span class="tl-tag tl-tag--dev">FRONTEND</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 03 · PROJECTS -->
+      <div class="m-sec">
+        <div class="sec-heading sec-block" style="margin-top:0">
+          <span class="sec-num">03</span>
+          <span class="sec-slash">//</span>
+          <span class="sec-title">Selected Projects</span>
+          <div class="sec-line"></div>
+        </div>
+        <div class="projects-list">
+          <div class="project-row">
+            <span class="project-id">001</span>
+            <span class="project-title">Syrama Services — Luxury Concierge</span>
+            <span class="project-stack">Symfony · MySQL · Tailwind</span>
+            <span class="project-year">2026</span>
+          </div>
+          <div class="project-row">
+            <span class="project-id">002</span>
+            <span class="project-title">Académie WS — LMS Platform</span>
+            <span class="project-stack">Symfony · MySQL · Tailwind</span>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-row">
+            <span class="project-id">003</span>
+            <span class="project-title">Itecom Art Design — School Management System</span>
+            <span class="project-stack">Laravel · PostgreSQL · VueJS</span>
+            <span class="project-year">2025</span>
+          </div>
+          <div class="project-row">
+            <span class="project-id">004</span>
+            <span class="project-title">VSP Security — Private Security Company</span>
+            <span class="project-stack">PHP · OOP · Tailwind</span>
+            <span class="project-year">2025</span>
+          </div>
+          <div class="project-row">
+            <span class="project-id">005</span>
+            <span class="project-title">Exissia — Web Agency</span>
+            <span class="project-stack">HTML · CSS · PHP · OOP</span>
+            <span class="project-year">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-p1" style="margin-top:auto">
+        <span class="footer-txt footer-txt--accent">samihhabbani@gmail.com</span>
+        <span class="footer-txt footer-txt--accent">SAMIH HABBANI · CV · 2026</span>
+        <span class="footer-txt footer-txt--accent">FWDAI-ENG · STATUS: AVAILABLE</span>
+      </div>
+
+    </main>
+  </div>
+
+</div>
+</body>
+</html>
