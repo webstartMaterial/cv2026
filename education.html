@@ -225,7 +225,7 @@
     .edu-school { font-size: 7px; color: var(--txt-3); }
 
     /* ── MAIN ───────────────────────────────────── */
-    .main { padding: 18px 26px 22px 22px; display: flex; flex-direction: column; }
+    .main { padding: 18px 26px 0px 22px; display: flex; flex-direction: column; }
 
     .m-sec { margin-bottom: 10px; }
 
@@ -281,6 +281,7 @@
     .exp-title { font-size: 8.5px; font-weight: 600; color: var(--txt-1); margin-bottom: 3px; line-height: 1.3; }
     .exp-desc { font-size: 7.5px; color: var(--txt-2); line-height: 1.5; margin-bottom: 5px; }
     .exp-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .exp-chips--skills { margin-top: 4px; }
     .chip {
       font-size: 6.2px; font-weight: 500; padding: 2px 6px;
       border-radius: 10px; letter-spacing: 0.04em;
@@ -589,7 +590,7 @@
           Education specialist and curriculum designer with <strong>10 years</strong> of experience building and scaling digital learning programs.
           Founded a training center and an e-learning platform serving <strong>5,000+ learners</strong> across France, Spain, Morocco and Dubai.
           Expert in designing job-ready curricula for web development, digital skills and AI — for students, job seekers, professionals and corporate teams.
-          Creator of <strong>1,000+ educational videos</strong> and adaptive learning pathways designed to accelerate career transitions in technology.
+          <br> Creator of <strong>1,000+ educational videos</strong> and adaptive learning pathways designed to accelerate career transitions in technology.
         </p>
       </div>
 
@@ -607,15 +608,19 @@
             <div class="exp-info">
               <div class="exp-location">Dubai, UAE</div>
               <div class="exp-title">AI Education Consultant & Instructor</div>
-              <div class="exp-desc">Designed and delivered AI literacy programs and automation workshops for international companies. Built custom learning pathways for non-technical professionals and executive teams, combining hands-on tools with practical business applications.</div>
+              <div class="exp-desc">Designed and delivered AI literacy programs and automation workshops for international companies. Built custom learning pathways for non-technical professionals and executive teams, combining hands-on tools with practical business applications. Also taught coding and AI fundamentals to children aged 6–17.</div>
               <div class="exp-chips">
                 <span class="chip chip--org">Morgan International</span>
                 <span class="chip chip--org">Octus Mindz Training</span>
                 <span class="chip chip--org">The Kid Space</span>
                 <span class="chip chip--org">Wood Wizards</span>
+              </div>
+              <div class="exp-chips exp-chips--skills">
                 <span class="chip chip--skill">AI Workshops</span>
                 <span class="chip chip--skill">Corporate Training</span>
                 <span class="chip chip--skill">Custom Programs</span>
+                <span class="chip chip--skill">Kids & Teens (6–17)</span>
+                <span class="chip chip--skill">AI Solutions Implementation</span>
               </div>
             </div>
             <span class="exp-badge">AI Education</span>
@@ -630,12 +635,15 @@
             <div class="exp-info">
               <div class="exp-location">Paris, France</div>
               <div class="exp-title">Founder & Curriculum Designer — Académie WS</div>
-              <div class="exp-desc">Built a full e-learning platform from the ground up. Designed and produced 1,000+ video lessons, structured adaptive pathways, and managed the complete instructional design cycle — from needs analysis to learner assessment and platform deployment.</div>
+              <div class="exp-desc">Built a full e-learning platform from the ground up covering web programming and digital marketing. Designed the entire learning experience: 1,000+ video lessons, slide decks, quizzes, student assessments and structured pathways — a complete, self-contained curriculum from onboarding to certification.</div>
               <div class="exp-chips">
                 <span class="chip chip--skill">Instructional Design</span>
                 <span class="chip chip--skill">LMS Platform</span>
                 <span class="chip chip--skill">Video Production</span>
                 <span class="chip chip--skill">Adaptive Pathways</span>
+                <span class="chip chip--skill">Quizzes & Assessments</span>
+                <span class="chip chip--skill">Slide Decks & Presentations</span>
+                <span class="chip chip--skill">Curriculum Design</span>
               </div>
             </div>
             <span class="exp-badge">LMS Founder</span>
@@ -650,7 +658,7 @@
             <div class="exp-info">
               <div class="exp-location">Paris, France</div>
               <div class="exp-title">Founder & Digital Education Specialist — Web Start</div>
-              <div class="exp-desc">Founded and managed a training center delivering job-ready digital programs for students, job seekers and professionals. Built partnerships with major French institutions and designed CPF/OPCO-eligible programs for professional retraining.</div>
+              <div class="exp-desc">Founded and managed a training center for students, job seekers and professionals. Curriculum covered web development, digital marketing, project management, sales and entrepreneurship. Partnered with 20+ French institutions on government-funded retraining programs.</div>
               <div class="exp-chips">
                 <span class="chip chip--org">AFPA</span>
                 <span class="chip chip--org">M2I Formation</span>
@@ -658,8 +666,12 @@
                 <span class="chip chip--org">DORANCO</span>
                 <span class="chip chip--org">IIM Devinci</span>
                 <span class="chip chip--org">My Digital School</span>
+              </div>
+              <div class="exp-chips exp-chips--skills">
                 <span class="chip chip--skill">Program Management</span>
                 <span class="chip chip--skill">Career Transition</span>
+                <span class="chip chip--skill">Curriculum Design</span>
+                <span class="chip chip--skill">Trainer Team Management</span>
               </div>
             </div>
             <span class="exp-badge">Training Center</span>
@@ -680,6 +692,12 @@
                 <span class="chip chip--org">2AI Concept</span>
                 <span class="chip chip--org">Formawave</span>
               </div>
+              <div class="exp-chips exp-chips--skills">
+                <span class="chip chip--skill">Coding</span>
+                <span class="chip chip--skill">Digital Marketing</span>
+                <span class="chip chip--skill">Project Management</span>
+                <span class="chip chip--skill">Entrepreneurship</span>
+              </div>
             </div>
             <span class="exp-badge">Instructor</span>
           </div>
@@ -697,6 +715,8 @@
                 <span class="chip chip--org">Glovo — Frontend Dev</span>
                 <span class="chip chip--org">Sopra Steria — Full Stack</span>
                 <span class="chip chip--org">Accenture — Senior Java Dev</span>
+              </div>
+              <div class="exp-chips exp-chips--skills">
                 <span class="chip chip--amber">Angular · Java · Spring · JavaScript · PHP · Python</span>
               </div>
             </div>
